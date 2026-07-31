@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guia interactiva de lectura - 7 anos</title>
+    <meta
+      name="description"
+      content="Guia interactiva para familias: detectar senales de alerta en lectura, aplicar pruebas en casa y saber cuando acudir a evaluacion profesional."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-aurora" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <p class="brand">Kid Read Learning</p>
+      <nav aria-label="Navegacion principal">
+        <a href="#alertas">Alertas</a>
+        <a href="#pruebas">Pruebas</a>
+        <a href="#laboratorio">Laboratorio</a>
+        <a href="#evaluador">Evaluador</a>
+        <a href="#recursos">Recursos</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero reveal" id="inicio">
+        <p class="eyebrow">Lectura temprana con accion clara</p>
+        <h1>
+          Entiende las dificultades de lectura en una nina de 7 anos y actua
+          desde hoy
+        </h1>
+        <p>
+          Esta guia te ayuda a observar senales, hacer pruebas en casa y tomar
+          decisiones informadas con el colegio y especialistas. No sustituye un
+          diagnostico clinico, pero si acelera una intervencion temprana.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#alertas">Empezar checklist</a>
+          <a class="btn btn-secondary" href="#pasos">Ver plan paso a paso</a>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="entender">
+        <h2>Que puede estar pasando</h2>
+        <div class="grid cards-4">
+          <article class="card">
+            <h3>Decodificacion fonologica</h3>
+            <p>
+              Puede costar asociar sonidos con letras y reconocer patrones como
+              <strong>al, el, il, ol, ul</strong> de forma automatica.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Memoria visual y auditiva</h3>
+            <p>
+              La lectura mejora cuando el cerebro recuerda como se ve y suena
+              cada patron. Si esto falla, la fluidez se frena.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Posible dislexia</h3>
+            <p>
+              Puede aparecer lectura lenta, confusion entre letras o dificultad
+              para consolidar patrones, incluso con practica.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Otras causas a descartar</h3>
+            <p>
+              Revision visual, auditiva y desarrollo madurativo: son pasos
+              basicos antes de sacar conclusiones.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="alertas">
+        <div class="split">
+          <div>
+            <h2>Checklist de senales de alerta</h2>
+            <p class="section-intro">
+              Marca lo observado en la ultima semana. El resultado es
+              orientativo y te ayuda a decidir prioridad.
+            </p>
+            <form id="alertChecklist" class="stack" aria-label="Checklist de alertas">
+              <label><input type="checkbox" value="2" /> Lee muy despacio o silabeando.</label>
+              <label><input type="checkbox" value="2" /> Confunde letras (b/d, p/q) o invierte al leer.</label>
+              <label><input type="checkbox" value="1" /> Ortografia muy pobre para su edad.</label>
+              <label><input type="checkbox" value="1" /> Se frustra rapido y evita leer.</label>
+              <label><input type="checkbox" value="1" /> Dificultad para derecha/izquierda.</label>
+              <label><input type="checkbox" value="1" /> Problemas para seguir instrucciones o en otras areas.</label>
+            </form>
+          </div>
+
+          <aside class="result-card" aria-live="polite">
+            <p class="result-label">Riesgo orientativo actual</p>
+            <p class="result-level" id="checklistLevel">Bajo</p>
+            <p class="result-score"><span id="checklistScore">0</span> / 8 puntos</p>
+            <div class="meter" role="img" aria-label="Nivel de alerta">
+              <span id="checklistMeter"></span>
+            </div>
+            <p class="result-message" id="checklistMessage">
+              Continua con actividades ludicas y observacion quincenal.
+            </p>
+            <button type="button" class="btn btn-tertiary" id="clearChecklist">
+              Limpiar checklist
+            </button>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="pasos">
+        <h2>Como proceder paso a paso</h2>
+        <ol class="timeline">
+          <li>
+            <h3>1. Evaluacion profesional</h3>
+            <p>
+              Primera consulta con pediatra o medico de familia para descartar
+              vision/audicion y solicitar derivacion a psicopedagogia o
+              neuropsicologia infantil.
+            </p>
+          </li>
+          <li>
+            <h3>2. Intervencion temprana</h3>
+            <p>
+              Prioriza programas de conciencia fonologica y metodos
+              multisensoriales con sesiones breves y frecuentes.
+            </p>
+          </li>
+          <li>
+            <h3>3. Estrategias en casa</h3>
+            <p>
+              Rimas, tarjetas de patrones, lectura compartida y audiolibro con
+              texto fisico para reducir ansiedad y ganar fluidez.
+            </p>
+          </li>
+          <li>
+            <h3>4. Coordinacion con colegio</h3>
+            <p>
+              Informa al tutor y solicita adaptaciones: tiempo extra, apoyo de
+              audicion/lenguaje y formas de evaluacion acordes.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="panel reveal" id="pruebas">
+        <h2>Pruebas en casa (guiadas)</h2>
+        <p class="section-intro">
+          Hazlas sin presion, maximo 15-20 minutos por sesion y con tono de
+          juego. Si quieres ejecutarlas paso a paso con tarjetas y puntaje
+          automatico, usa el laboratorio de abajo.
+        </p>
+
+        <div class="accordion">
+          <details>
+            <summary>Prueba 1: Patrones silabicos al-el-il-ol-ul</summary>
+            <p>
+              Usa 15 palabras. Senal de alerta: mas de 30% de errores o mas de
+              60 segundos con lectura silabeada.
+            </p>
+          </details>
+          <details>
+            <summary>Prueba 2: Pseudopalabras</summary>
+            <p>
+              Mezcla palabras reales e inventadas. Si solo lee conocidas, puede
+              haber dificultad en conversion grafema-fonema.
+            </p>
+          </details>
+          <details>
+            <summary>Prueba 3: Velocidad lectora</summary>
+            <p>
+              Texto de 100 palabras durante 1 minuto. Referencia orientativa a
+              los 7 anos: 60-90 ppm. Alerta por debajo de 50 ppm.
+            </p>
+          </details>
+          <details>
+            <summary>Prueba 4: Conciencia fonologica</summary>
+            <p>
+              Evalua rimas, segmentacion y omision de silabas. Dificultades
+              repetidas sugieren base fonologica fragil.
+            </p>
+          </details>
+          <details>
+            <summary>Prueba 5: Comprension lectora basica</summary>
+            <p>
+              Lee 3-4 frases y haz 2-3 preguntas de contenido. Si lee sin
+              comprender, revisa enfoque de intervencion.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="laboratorio">
+        <h2>Laboratorio interactivo de pruebas</h2>
+        <p class="section-intro">
+          Prepara datos, muestra estimulos al nino y registra resultados de la
+          sesion sin hacerlo en papel.
+        </p>
+
+        <div class="lab-grid">
+          <div class="lab-setup">
+            <form id="testLabSetup" class="lab-form">
+              <label>
+                Tipo de prueba
+                <select id="labTestType">
+                  <option value="patterns">Patrones silabicos</option>
+                  <option value="pseudo">Pseudopalabras</option>
+                  <option value="phonology">Conciencia fonologica</option>
+                  <option value="reading">Comprension lectora</option>
+                  <option value="speed">Velocidad lectora (1 minuto)</option>
+                </select>
+              </label>
+
+              <label>
+                Nivel
+                <select id="labDifficulty">
+                  <option value="easy">Facil</option>
+                  <option value="medium" selected>Medio</option>
+                  <option value="hard">Avanzado</option>
+                </select>
+              </label>
+
+              <label id="labCountWrap">
+                Cantidad de items
+                <input type="number" id="labItemCount" min="5" max="30" value="15" />
+              </label>
+
+              <fieldset id="patternPicker">
+                <legend>Patrones a incluir</legend>
+                <label><input type="checkbox" name="pattern" value="al" checked /> al</label>
+                <label><input type="checkbox" name="pattern" value="el" checked /> el</label>
+                <label><input type="checkbox" name="pattern" value="il" checked /> il</label>
+                <label><input type="checkbox" name="pattern" value="ol" checked /> ol</label>
+                <label><input type="checkbox" name="pattern" value="ul" checked /> ul</label>
+              </fieldset>
+
+              <div class="actions-row">
+                <button class="btn btn-tertiary" type="button" id="generateLabData">
+                  Preparar datos
+                </button>
+                <button class="btn btn-primary" type="button" id="startLabSession" disabled>
+                  Iniciar sesion
+                </button>
+              </div>
+            </form>
+
+            <div class="preview-box">
+              <p class="preview-title">Vista previa para adulto</p>
+              <p class="preview-note" id="labPreviewNote">
+                Prepara una prueba para ver lista de items antes de iniciar.
+              </p>
+              <ul id="labPreview" class="preview-list"></ul>
+            </div>
+          </div>
+
+          <aside class="lab-player" aria-live="polite">
+            <div class="lab-player-head">
+              <p class="result-label">Modo presentacion</p>
+              <button class="btn btn-secondary btn-small" type="button" id="toggleKidView">
+                Pantalla grande
+              </button>
+            </div>
+
+            <p class="lab-progress" id="labProgress">Item 0 de 0</p>
+            <p class="lab-timer" id="labTimer">00:00</p>
+            <div class="lab-reading" id="labReadingText" hidden></div>
+            <div class="stimulus-card" id="labStimulus">
+              Aqui apareceran palabras, preguntas o instrucciones para la prueba.
+            </div>
+
+            <div class="lab-controls" id="labMainControls">
+              <button class="btn btn-primary" type="button" id="labCorrect" disabled>
+                Correcto
+              </button>
+              <button class="btn btn-tertiary" type="button" id="labIncorrect" disabled>
+                Error
+              </button>
+              <button class="btn btn-secondary" type="button" id="labSkip" disabled>
+                Omitir
+              </button>
+            </div>
+
+            <div class="lab-controls" id="speedControls" hidden>
+              <button class="btn btn-primary" type="button" id="finishSpeedNow" disabled>
+                Finalizar minuto
+              </button>
+            </div>
+
+            <form id="speedResultForm" class="speed-form" hidden>
+              <label>
+                Palabras correctas leidas en 1 minuto
+                <input type="number" id="speedWordsRead" min="0" max="180" required />
+              </label>
+              <button class="btn btn-primary" type="submit">Guardar resultado</button>
+            </form>
+          </aside>
+        </div>
+
+        <div class="result-card lab-summary">
+          <p class="result-label">Estado de sesion</p>
+          <p class="result-level" id="labStatus">Sin sesion activa</p>
+          <p class="result-score" id="labStats">Prepara datos para comenzar.</p>
+          <p class="result-message" id="labAdvice">
+            Al terminar una prueba, podras enviar automaticamente el resultado al
+            registro de seguimiento.
+          </p>
+          <div class="actions-row">
+            <button class="btn btn-tertiary" type="button" id="saveLabToLog" disabled>
+              Guardar en registro
+            </button>
+            <button class="btn btn-secondary" type="button" id="exportLabPdf" disabled>
+              Exportar sesion a PDF
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="evaluador">
+        <div class="split">
+          <div>
+            <h2>Mini evaluador orientativo</h2>
+            <p class="section-intro">
+              Introduce resultados de una sesion para obtener una recomendacion
+              accionable.
+            </p>
+            <form id="quickEval" class="eval-grid">
+              <label>
+                Errores en patrones (0-15)
+                <input type="number" min="0" max="15" id="errPatrones" required />
+              </label>
+              <label>
+                Tiempo en prueba 1 (segundos)
+                <input type="number" min="10" max="300" id="timePatrones" required />
+              </label>
+              <label>
+                Palabras por minuto (prueba 3)
+                <input type="number" min="0" max="180" id="ppm" required />
+              </label>
+              <label>
+                Pseudopalabras
+                <select id="pseudo" required>
+                  <option value="ok">Lee reales e inventadas con similitud</option>
+                  <option value="partial">Le cuesta varias inventadas</option>
+                  <option value="block">Se bloquea casi siempre con inventadas</option>
+                </select>
+              </label>
+              <label>
+                Conciencia fonologica
+                <select id="fono" required>
+                  <option value="ok">Resuelve rimas y silabas</option>
+                  <option value="partial">Falla en algunas tareas</option>
+                  <option value="block">Falla en la mayoria</option>
+                </select>
+              </label>
+              <label>
+                Comprension lectora
+                <select id="comprension" required>
+                  <option value="ok">Comprende lo esencial</option>
+                  <option value="partial">Comprension parcial</option>
+                  <option value="low">Casi no comprende</option>
+                </select>
+              </label>
+
+              <div class="actions-row">
+                <button class="btn btn-primary" type="submit">Calcular orientacion</button>
+                <button class="btn btn-secondary" type="button" id="resetEval">Reiniciar</button>
+              </div>
+            </form>
+          </div>
+
+          <aside class="result-card" aria-live="polite">
+            <p class="result-label">Resultado de la sesion</p>
+            <p class="result-level" id="evalLevel">Sin datos</p>
+            <p class="result-score" id="evalScore">Completa el formulario</p>
+            <p class="result-message" id="evalMessage">
+              Usa este resultado para preparar la consulta con el especialista y
+              compartir observaciones con el colegio.
+            </p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="registro">
+        <h2>Registro de seguimiento</h2>
+        <p class="section-intro">
+          Guarda cada sesion y revisa progreso cada 2-3 semanas.
+        </p>
+        <form id="logForm" class="log-form">
+          <label>Fecha <input type="date" id="logDate" required /></label>
+          <label>
+            Prueba
+            <select id="logTest" required>
+              <option value="Patrones">Patrones al-el-il-ol-ul</option>
+              <option value="Pseudopalabras">Pseudopalabras</option>
+              <option value="Velocidad">Velocidad lectora</option>
+              <option value="Conciencia fonologica">Conciencia fonologica</option>
+              <option value="Comprension">Comprension lectora</option>
+            </select>
+          </label>
+          <label>Errores <input type="text" id="logErrors" placeholder="6/15" /></label>
+          <label>Tiempo <input type="text" id="logTime" placeholder="1:20" /></label>
+          <label class="full">
+            Observaciones
+            <input
+              type="text"
+              id="logNotes"
+              placeholder="Ej: confunde el/il y se frustra al final"
+            />
+          </label>
+          <button type="submit" class="btn btn-tertiary">Agregar registro</button>
+          <button type="button" class="btn btn-secondary" id="clearLogs">Borrar historial</button>
+        </form>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha</th>
+                <th>Prueba</th>
+                <th>Errores</th>
+                <th>Tiempo</th>
+                <th>Observaciones</th>
+              </tr>
+            </thead>
+            <tbody id="logTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel panel-warning reveal" id="no-hacer">
+        <h2>Que NO hacer</h2>
+        <ul>
+          <li>No esperar a que se pase solo cuando hay alertas repetidas.</li>
+          <li>No corregir cada error interrumpiendo la lectura.</li>
+          <li>No comparar con otros ninos.</li>
+          <li>No usar castigos ni presion: aumenta ansiedad y rechazo.</li>
+        </ul>
+      </section>
+
+      <section class="panel reveal" id="libros">
+        <h2>Libros recomendados para empezar</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Libro/Coleccion</th>
+                <th>Objetivo</th>
+                <th>Edad</th>
+                <th>Tipo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Aprendo a leer las silabas</td>
+                <td>Patrones silabicos concretos</td>
+                <td>6-8</td>
+                <td>Refuerzo</td>
+              </tr>
+              <tr>
+                <td>Aprendo a leer. Silabas y palabras</td>
+                <td>Directas, inversas y mixtas</td>
+                <td>4+</td>
+                <td>Guia familiar</td>
+              </tr>
+              <tr>
+                <td>Colibri / Flash Fiction DYS</td>
+                <td>Lectura placentera adaptada</td>
+                <td>7+</td>
+                <td>Lectura facil</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel reveal" id="recursos">
+        <h2>Recursos utiles</h2>
+        <div class="resources">
+          <a href="https://www.understood.org/es-mx/articles/child-trouble-reading" target="_blank" rel="noreferrer">Understood.org (espanol)</a>
+          <a href="https://ceapa.es/wp-content/uploads/2021/02/DIFICULTADES-DE-APRENDIZAJE-RELACIONADAS-CON-LA-LECTURA.pdf" target="_blank" rel="noreferrer">Guia CEAPA sobre lectura</a>
+          <a href="https://www.healthychildren.org/Spanish/health-issues/conditions/learning-disabilities/Paginas/reading-disorders-what-parents-need-to-know.aspx" target="_blank" rel="noreferrer">HealthyChildren.org</a>
+          <a href="https://www.mayoclinic.org/es/diseases-conditions/dyslexia/symptoms-causes/syc-20353552" target="_blank" rel="noreferrer">Mayo Clinic (dislexia)</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        Esta pagina es orientativa y educativa. Si hay varias senales de alerta,
+        prioriza evaluacion profesional.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
