@@ -47,7 +47,7 @@ function setupChecklist() {
     if (score <= 2) {
       checklistLevel.textContent = "Bajo";
       checklistMessage.textContent =
-        "Continua con actividades ludicas, lectura compartida y observacion quincenal.";
+        "Continúa con actividades lúdicas, lectura compartida y observación quincenal.";
       return;
     }
 
@@ -60,7 +60,7 @@ function setupChecklist() {
 
     checklistLevel.textContent = "Alto";
     checklistMessage.textContent =
-      "Hay varias senales de alerta: prioriza evaluacion profesional y lleva un registro de resultados.";
+      "Hay varias señales de alerta: prioriza la evaluación profesional y lleva un registro de resultados.";
   }
 
   function saveChecklistState() {
@@ -141,25 +141,25 @@ function setupQuickEvaluator() {
   }
 
   function paintEval(score) {
-    evalScore.textContent = `Puntaje orientativo: ${score} / 12`;
+    evalScore.textContent = `Puntuación orientativa: ${score} / 12`;
 
     if (score <= 3) {
       evalLevel.textContent = "Seguimiento activo";
       evalMessage.textContent =
-        "Continua refuerzo en casa y repite en 2-3 semanas para confirmar avance.";
+        "Continúa el refuerzo en casa y repite en 2-3 semanas para confirmar el avance.";
       return;
     }
 
     if (score <= 7) {
-      evalLevel.textContent = "Requiere accion";
+      evalLevel.textContent = "Requiere acción";
       evalMessage.textContent =
-        "Comparte resultados con tutor y prepara consulta profesional en el corto plazo.";
+        "Comparte los resultados con el tutor y prepara una consulta profesional en el corto plazo.";
       return;
     }
 
     evalLevel.textContent = "Prioridad alta";
     evalMessage.textContent =
-      "Recomendacion: evaluacion profesional prioritaria (pediatra y especialista en aprendizaje).";
+      "Recomendación: evaluación profesional prioritaria (pediatra y especialista en aprendizaje).";
   }
 
   quickEvalForm.addEventListener("submit", (event) => {
@@ -178,7 +178,7 @@ function setupQuickEvaluator() {
     };
 
     if (payload.errors > expectedItems) {
-      itemCountField.setCustomValidity(`El maximo de errores debe ser ${expectedItems}.`);
+      itemCountField.setCustomValidity(`El máximo de errores debe ser ${expectedItems}.`);
       itemCountField.reportValidity();
       return;
     }
@@ -228,7 +228,7 @@ function setupLogs() {
       const tr = document.createElement("tr");
       const td = document.createElement("td");
       td.colSpan = 5;
-      td.textContent = "Aun no hay registros. Agrega tu primera sesion.";
+      td.textContent = "Aún no hay registros. Añade tu primera sesión.";
       tr.appendChild(td);
       logBody.appendChild(tr);
     }

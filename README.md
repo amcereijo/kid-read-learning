@@ -1,37 +1,37 @@
 # Kid Read Learning
 
-Guia web interactiva para familias y docentes que acompanan el inicio lector:
+Guía web interactiva para familias y docentes que acompañan el inicio lector:
 
-- Detectar senales de alerta en lectura.
+- Detectar señales de alerta en lectura.
 - Aplicar pruebas guiadas en casa o aula.
 - Registrar sesiones y resultados.
-- Usar una zona visual especifica para ninos.
+- Usar una zona visual específica para niños.
 
 ## Estructura del proyecto
 
-- `index.html`: pagina principal para adultos (guia, evaluador y registro).
-- `styles.css`: estilos de la pagina principal.
-- `script.js`: logica de checklist, evaluador y registro (pagina principal).
+- `index.html`: página principal para adultos (guía, evaluador y registro).
+- `styles.css`: estilos de la página principal.
+- `script.js`: lógica de checklist, evaluador y registro (página principal).
 - `zona-ninos.html`: experiencia interactiva infantil para ejecutar pruebas.
 - `zona-ninos.css`: estilos de la zona infantil.
-- `zona-ninos.js`: motor de pruebas, niveles, patrones, guardado y exportacion PDF.
+- `zona-ninos.js`: motor de pruebas, niveles, patrones, guardado y exportación PDF.
 
 ## Funcionalidades principales
 
-- Checklist de senales de alerta.
+- Checklist de señales de alerta.
 - Mini evaluador orientativo.
 - Registro de sesiones con persistencia local (`localStorage`).
-- Pruebas interactivas por tipo (patrones, pseudopalabras, conciencia fonologica, comprension y velocidad).
-- Seleccion de nivel (`facil`, `medio`, `avanzado`).
-- Seleccion de patrones silabicos por categorias con acciones rapidas:
-  - Seleccionar basicos
+- Pruebas interactivas por tipo (patrones, pseudopalabras, conciencia fonológica, comprensión y velocidad).
+- Selección de nivel (`fácil`, `medio`, `avanzado`).
+- Selección de patrones silábicos por categorías con acciones rápidas:
+  - Seleccionar básicos
   - Seleccionar todos
   - Limpiar
-- Exportacion de sesion a PDF (via ventana de impresion del navegador).
+- Exportación de sesión a PDF (vía ventana de impresión del navegador).
 
 ## Uso local
 
-Como es un sitio estatico, puedes abrir `index.html` directamente en el navegador.
+Como es un sitio estático, puedes abrir `index.html` directamente en el navegador.
 
 Si prefieres servidor local:
 
@@ -46,7 +46,7 @@ Luego abre:
 
 ## Publicacion
 
-El proyecto esta preparado para publicarse en GitHub Pages (rama `main`, carpeta raiz).
+El proyecto está preparado para publicarse en GitHub Pages (rama `main`, carpeta raíz).
 
 URL de referencia del despliegue actual:
 
@@ -54,5 +54,5 @@ URL de referencia del despliegue actual:
 
 ## Notas
 
-- Esta herramienta es educativa/orientativa y no sustituye una evaluacion profesional.
-- Ante multiples senales de alerta, se recomienda consulta con pediatria y especialista en aprendizaje.
+- Esta herramienta es educativa/orientativa y no sustituye una evaluación profesional.
+- Ante múltiples señales de alerta, se recomienda consulta con pediatría y especialista en aprendizaje.

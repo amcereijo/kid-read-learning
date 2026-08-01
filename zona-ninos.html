@@ -19,7 +19,7 @@
   <body>
     <div class="bg"></div>
     <header class="topbar">
-      <a class="back-link" href="index.html">Volver a guia familiar</a>
+      <a class="back-link" href="index.html">Volver a la guía familiar</a>
       <p class="brand">Zona niños - Mision lectura</p>
     </header>
 
@@ -28,7 +28,7 @@
         <p class="eyebrow">Espacio infantil interactivo</p>
         <h1>Jugamos a leer: retos cortos, colores vivos y grandes tarjetas</h1>
         <p>
-          Esta pantalla esta pensada para niños en edad de empezar a leer. Un
+          Esta pantalla está pensada para niños en edad de empezar a leer. Un
           adulto prepara la prueba y luego presenta cada reto con botones simples.
         </p>
       </section>
@@ -40,10 +40,10 @@
             <label>
               Tipo de prueba
               <select id="labTestType">
-                <option value="patterns">Patrones silabicos</option>
+                <option value="patterns">Patrones silábicos</option>
                 <option value="pseudo">Pseudopalabras</option>
-                <option value="phonology">Conciencia fonologica</option>
-                <option value="reading">Comprension lectora</option>
+                <option value="phonology">Conciencia fonológica</option>
+                <option value="reading">Comprensión lectora</option>
                 <option value="speed">Velocidad lectora (1 minuto)</option>
               </select>
             </label>
@@ -51,22 +51,22 @@
             <label>
               Nivel
               <select id="labDifficulty">
-                <option value="easy">Facil</option>
+                <option value="easy">Fácil</option>
                 <option value="medium" selected>Medio</option>
                 <option value="hard">Avanzado</option>
               </select>
             </label>
 
             <label id="labCountWrap">
-              Cantidad de items
+              Cantidad de ítems
               <input type="number" id="labItemCount" min="5" max="30" value="15" />
             </label>
 
             <fieldset id="patternPicker">
-              <legend>Patrones silabicos</legend>
-              <div class="pattern-quick-actions" aria-label="Acciones rapidas de patrones">
+              <legend>Patrones silábicos</legend>
+              <div class="pattern-quick-actions" aria-label="Acciones rápidas de patrones">
                 <button type="button" class="btn btn-outline btn-mini" id="selectBasicPatterns">
-                  Seleccionar basicos
+                  Seleccionar básicos
                 </button>
                 <button type="button" class="btn btn-outline btn-mini" id="selectAllPatterns">
                   Seleccionar todos
@@ -132,7 +132,7 @@
               </div>
 
               <div class="pattern-group">
-                <p class="pattern-title">Digrafos frecuentes</p>
+                <p class="pattern-title">Dígrafos frecuentes</p>
                 <div class="pattern-options">
                   <label><input type="checkbox" name="pattern" value="ch" /> ch</label>
                   <label><input type="checkbox" name="pattern" value="ll" /> ll</label>
@@ -143,7 +143,7 @@
               </div>
 
               <div class="pattern-group">
-                <p class="pattern-title">Combinaciones vocalicas</p>
+                <p class="pattern-title">Combinaciones vocálicas</p>
                 <div class="pattern-options">
                   <label><input type="checkbox" name="pattern" value="ia" /> ia</label>
                   <label><input type="checkbox" name="pattern" value="ie" /> ie</label>
@@ -161,7 +161,7 @@
                 Preparar datos
               </button>
               <button class="btn btn-primary" type="button" id="startLabSession" disabled>
-                Iniciar sesion
+                Iniciar sesión
               </button>
             </div>
           </form>
@@ -175,11 +175,11 @@
           </div>
 
           <div class="summary-card">
-            <p class="summary-label">Estado de sesion</p>
-            <p class="summary-level" id="labStatus">Sin sesion activa</p>
+            <p class="summary-label">Estado de sesión</p>
+            <p class="summary-level" id="labStatus">Sin sesión activa</p>
             <p class="summary-score" id="labStats">Prepara datos para comenzar.</p>
             <p class="summary-message" id="labAdvice">
-              Puedes guardar el resultado en el registro de la guia principal.
+              Puedes guardar el resultado en el registro de la guía principal.
             </p>
             <div class="actions-row">
               <button class="btn btn-soft" type="button" id="saveLabToLog" disabled>
@@ -194,7 +194,7 @@
 
         <section class="panel stage-panel" aria-live="polite">
           <div class="stage-head">
-            <p class="progress" id="labProgress">Item 0 de 0</p>
+            <p class="progress" id="labProgress">Ítem 0 de 0</p>
             <p class="timer" id="labTimer">00:00</p>
             <div class="stage-head-actions">
               <button class="btn btn-outline btn-mini" type="button" id="toggleKidView">
@@ -210,7 +210,7 @@
 
           <div class="lab-reading" id="labReadingText" hidden></div>
           <div class="stimulus-card" id="labStimulus">
-            Hola! Aqui apareceran palabras, preguntas y retos de lectura.
+            ¡Hola! Aquí aparecerán palabras, preguntas y retos de lectura.
           </div>
 
           <div class="lab-controls" id="labMainControls">
@@ -218,7 +218,7 @@
               Lo logro
             </button>
             <button class="btn btn-warn" type="button" id="labIncorrect" disabled>
-              Le costo
+              Le costó
             </button>
             <button class="btn btn-outline" type="button" id="labSkip" disabled>
               Saltar

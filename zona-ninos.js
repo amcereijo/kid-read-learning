@@ -46,38 +46,38 @@ const patternWordPools = {
   il: ["mil", "fil", "til", "sil", "vil", "ril", "gil", "nil", "pil", "cil"],
   ol: ["sol", "col", "rol", "mol", "pol", "vol", "dol", "fol", "bol", "tol"],
   ul: ["tul", "pul", "zul", "mul", "ful", "sul", "rul", "kul", "hul", "gul"],
-  ar: ["mar", "barco", "carta", "tarde", "arco", "caracol", "jardin", "armario", "par", "bar"],
+  ar: ["mar", "barco", "carta", "tarde", "arco", "caracol", "jardín", "armario", "par", "bar"],
   er: ["ver", "pera", "verde", "cero", "tener", "hermano", "viernes", "merienda", "ser", "leer"],
   ir: ["ir", "mirar", "sirena", "pirata", "tirar", "girar", "jirafa", "iniciar", "viruta", "circular"],
   or: ["flor", "color", "motor", "doctor", "corona", "oruga", "dormir", "corto", "tesoro", "amor"],
-  ur: ["sur", "burro", "puro", "curar", "urgente", "turbina", "murcielago", "turista", "curioso", "muro"],
+  ur: ["sur", "burro", "puro", "curar", "urgente", "turbina", "murciélago", "turista", "curioso", "muro"],
   an: ["pan", "cantar", "manta", "banana", "santa", "campana", "pantano", "andar", "ancla", "mancha"],
   en: ["tren", "lente", "ventana", "tener", "encender", "centro", "diente", "lengua", "mensaje", "enano"],
-  in: ["fin", "pintar", "tinta", "invierno", "camino", "rincon", "cinta", "pirinola", "brinco", "intento"],
-  on: ["boton", "raton", "montana", "sonido", "corazon", "tronco", "onda", "horizonte", "poncho", "sombra"],
-  un: ["uno", "junta", "mundo", "punto", "lunes", "cuna", "uniforme", "murmullo", "tunel", "nunca"],
+  in: ["fin", "pintar", "tinta", "invierno", "camino", "rincón", "cinta", "pirínola", "brinco", "intento"],
+  on: ["botón", "ratón", "montaña", "sonido", "corazón", "tronco", "onda", "horizonte", "poncho", "sombra"],
+  un: ["uno", "junta", "mundo", "punto", "lunes", "cuna", "uniforme", "murmullo", "túnel", "nunca"],
   as: ["casa", "masa", "vaso", "paso", "raspa", "gafas", "tasas", "islas", "asado", "basura"],
   es: ["mesa", "peso", "queso", "beso", "estrella", "escoba", "escuela", "espejo", "tesoro", "esquina"],
-  is: ["isla", "lista", "pista", "historia", "misterio", "visita", "camisa", "artista", "isidro", "fisica"],
-  os: ["oso", "coso", "rosa", "nosotros", "cosa", "bosque", "poste", "costura", "fosforo", "hostal"],
-  us: ["musica", "bus", "gusano", "susto", "justo", "ruso", "pulso", "lustre", "custodia", "susurro"],
+  is: ["isla", "lista", "pista", "historia", "misterio", "visita", "camisa", "artista", "isidro", "física"],
+  os: ["oso", "coso", "rosa", "nosotros", "cosa", "bosque", "poste", "costura", "fósforo", "hostal"],
+  us: ["música", "bus", "gusano", "susto", "justo", "ruso", "pulso", "lustre", "custodia", "susurro"],
   br: ["brazo", "brisa", "brocha", "brillo", "bravo", "bruja", "brinco", "abrigo", "sombrero", "bronce"],
   tr: ["tren", "trapo", "trigo", "trueno", "estrella", "trenza", "trofeo", "triste", "tractor", "tramo"],
-  pl: ["plato", "pluma", "planeta", "playa", "plaza", "pliego", "explorar", "cumple", "pliego", "soplar"],
+  pl: ["plato", "pluma", "planeta", "playa", "plaza", "pliego", "explorar", "cumple", "planta", "soplar"],
   cl: ["clase", "clavo", "clima", "clown", "tecla", "claro", "inclinar", "bicicleta", "ancla", "clorofila"],
-  gr: ["grano", "grifo", "gruta", "grande", "grillo", "gracia", "alegria", "tigre", "granja", "grueso"],
+  gr: ["grano", "grifo", "gruta", "grande", "grillo", "gracia", "alegría", "tigre", "granja", "grueso"],
   ch: ["chico", "chicle", "chocolate", "leche", "noche", "mochila", "charco", "chispa", "choza", "hecho"],
   ll: ["llave", "lluvia", "caballo", "silla", "calle", "botella", "llegar", "llama", "amarillo", "rodilla"],
   rr: ["perro", "carro", "torre", "barrio", "tierra", "cerrar", "guitarra", "ferrocarril", "correr", "arroz"],
-  que: ["queso", "queja", "quemar", "quedarse", "pequeno", "raqueta", "bosque", "quebrar", "paquete", "esquema"],
-  qui: ["quinto", "quitar", "quince", "quimica", "maquina", "equipo", "esquina", "tranquilo", "quijote", "liquido"],
-  ia: ["dia", "piano", "diario", "familia", "magia", "sandia", "bicicleta", "historia", "viaje", "tierra"],
+  que: ["queso", "queja", "quemar", "quedarse", "pequeño", "raqueta", "bosque", "quebrar", "paquete", "esquema"],
+  qui: ["quinto", "quitar", "quince", "química", "máquina", "equipo", "esquina", "tranquilo", "quijote", "líquido"],
+  ia: ["día", "piano", "diario", "familia", "magia", "sandía", "bicicleta", "historia", "viaje", "tierra"],
   ie: ["pie", "siete", "hielo", "diente", "cielo", "viento", "siembra", "tierra", "hierba", "fiebre"],
-  ua: ["agua", "cuadro", "guante", "cuatro", "igual", "lengua", "cuando", "suave", "guardian", "cuaderno"],
+  ua: ["agua", "cuadro", "guante", "cuatro", "igual", "lengua", "cuando", "suave", "guardián", "cuaderno"],
   ue: ["huevo", "fuego", "juego", "escuela", "puerta", "cueva", "trueno", "hueso", "nueve", "fuerte"],
-  ai: ["aire", "baile", "caiman", "traigo", "paisaje", "maiz", "raiz", "caido", "paico", "vainilla"],
+  ai: ["aire", "baile", "caimán", "traigo", "paisaje", "maíz", "raíz", "caído", "paico", "vainilla"],
   au: ["auto", "causa", "pausa", "aula", "aurora", "jaula", "laurel", "taurino", "audaz", "sauna"],
-  ui: ["ruido", "cuidar", "muy", "cuidado", "pinguino", "circuito", "construir", "fluido", "intuir", "guiar"],
+  ui: ["ruido", "cuidar", "muy", "cuidado", "pingüino", "circuito", "construir", "fluido", "intuir", "guiar"],
 };
 
 const pseudoConsonants = ["b", "c", "d", "f", "g", "j", "k", "m", "n", "p", "r", "t", "v", "z"];
@@ -112,55 +112,55 @@ const pseudoPatternsByLevel = {
 const basicPatternSet = new Set(["al", "el", "il", "ol", "ul"]);
 
 const phonologyPrompts = [
-  "Rima: Que rima con SOL? Opciones: col, pan, mesa.",
+  "Rima: ¿Qué rima con SOL? Opciones: col, pan, mesa.",
   "Rima: Di una palabra que rime con MAL.",
-  "Segmentacion: Cuantas silabas tiene PE-LO-TA?",
-  "Segmentacion: Cual es la primera silaba de CA-SA?",
-  "Omitir silaba: Si a PE-LO-TA le quitamos PE, que queda?",
-  "Identifica sonido: Que palabra empieza igual que SOL: sopa o mesa?",
+  "Segmentación: ¿Cuántas sílabas tiene PE-LO-TA?",
+  "Segmentación: ¿Cuál es la primera sílaba de CA-SA?",
+  "Omitir sílaba: Si a PE-LO-TA le quitamos PE, ¿qué queda?",
+  "Identifica sonido: ¿Qué palabra empieza igual que SOL: sopa o mesa?",
   "Fusiona sonidos: /s/ + /o/ + /l/ = ?",
-  "Detecta silaba final: Que termina igual que MAL: sol o sal?",
-  "Rima inversa: Cual NO rima con COL: sol, rol, pan?",
-  "Segmentacion: Divide en silabas PA-TO y di cuantas son.",
+  "Detecta sílaba final: ¿Qué termina igual que MAL: sol o sal?",
+  "Rima inversa: ¿Cuál NO rima con COL: sol, rol o pan?",
+  "Segmentación: Divide en sílabas PA-TO y di cuántas son.",
 ];
 
 const readingPassages = [
   {
     title: "El gato y la maleta",
     text:
-      "Lola encontro una maleta azul en el salon. Al abrirla, vio un libro, un mapita y una bufanda. Su gato Sol salto dentro y se quedo dormido. Lola rio y leyo el libro en voz alta.",
+      "Lola encontró una maleta azul en el salón. Al abrirla, vio un libro, un mapita y una bufanda. Su gato Sol saltó dentro y se quedó dormido. Lola rió y leyó el libro en voz alta.",
     questions: [
-      "Quien encontro la maleta?",
-      "Que habia dentro de la maleta?",
-      "Que hizo el gato Sol?",
+      "¿Quién encontró la maleta?",
+      "¿Qué había dentro de la maleta?",
+      "¿Qué hizo el gato Sol?",
     ],
   },
   {
     title: "Paseo al parque",
     text:
-      "Elena salio al parque con su papa. Llevo una pelota y una botella de agua. Primero corrio, luego salto y al final descanso en un banco. Antes de volver, recogio una hoja amarilla para su cuaderno.",
+      "Elena salió al parque con su papá. Llevó una pelota y una botella de agua. Primero corrió, luego saltó y al final descansó en un banco. Antes de volver, recogió una hoja amarilla para su cuaderno.",
     questions: [
-      "Con quien fue Elena al parque?",
-      "Que llevo Elena al parque?",
-      "Que recogio antes de volver a casa?",
+      "¿Con quién fue Elena al parque?",
+      "¿Qué llevó Elena al parque?",
+      "¿Qué recogió antes de volver a casa?",
     ],
   },
   {
     title: "La escuela de Mila",
     text:
-      "Mila llego temprano a la escuela. En clase de lectura, su grupo formo palabras con tarjetas. Despues, escribieron una frase en la pizarra. Mila eligio la palabra sol y la leyo con calma.",
+      "Mila llegó temprano a la escuela. En clase de lectura, su grupo formó palabras con tarjetas. Después, escribieron una frase en la pizarra. Mila eligió la palabra sol y la leyó con calma.",
     questions: [
-      "A donde llego Mila temprano?",
-      "Que hicieron con tarjetas en clase?",
-      "Que palabra eligio Mila?",
+      "¿A dónde llegó Mila temprano?",
+      "¿Qué hicieron con tarjetas en clase?",
+      "¿Qué palabra eligió Mila?",
     ],
   },
 ];
 
 const speedTexts = [
-  "Sara sale al parque con su hermana. Llevan una pelota roja y una botella de agua. Corren por el camino, saltan tres veces y despues descansan en un banco. Un perro pequeno pasa rapido y mueve la cola. Sara sonrie, toma aire y vuelve a leer el cartel del parque con calma.",
-  "Leo prepara su mochila para la escuela. Guarda un cuaderno, un lapiz, una regla y una fruta. En el aula, la maestra escribe una frase corta en la pizarra. Leo la lee despacio, repite dos palabras y al final la entiende. Luego dibuja un sol y una casa en su hoja.",
-  "Alma visita la biblioteca con su clase. El bibliotecario muestra libros de animales y de planetas. Alma elige uno de gatos y otro de estrellas. Se sienta, abre el primero y lee en voz alta una linea. Cuando termina, marca la pagina con una cinta azul y sonrie.",
+  "Sara sale al parque con su hermana. Llevan una pelota roja y una botella de agua. Corren por el camino, saltan tres veces y después descansan en un banco. Un perro pequeño pasa rápido y mueve la cola. Sara sonríe, toma aire y vuelve a leer el cartel del parque con calma.",
+  "Leo prepara su mochila para la escuela. Guarda un cuaderno, un lápiz, una regla y una fruta. En el aula, la maestra escribe una frase corta en la pizarra. Leo la lee despacio, repite dos palabras y al final la entiende. Luego dibuja un sol y una casa en su hoja.",
+  "Alma visita la biblioteca con su clase. El bibliotecario muestra libros de animales y de planetas. Alma elige uno de gatos y otro de estrellas. Se sienta, abre el primero y lee en voz alta una línea. Cuando termina, marca la página con una cinta azul y sonríe.",
 ];
 
 const readingPassagesByLevel = {
@@ -171,11 +171,11 @@ const readingPassagesByLevel = {
     {
       title: "Noche de estrellas",
       text:
-        "Nora observo el cielo desde el patio de su casa. Anoto en una libreta tres estrellas que brillaban cerca de la luna. Luego explico a su hermano como encontro cada una. Al final guardo la libreta y prometio volver a mirar la proxima noche.",
+        "Nora observó el cielo desde el patio de su casa. Anotó en una libreta tres estrellas que brillaban cerca de la luna. Luego explicó a su hermano cómo encontró cada una. Al final guardó la libreta y prometió volver a mirar la próxima noche.",
       questions: [
-        "Desde donde observo el cielo Nora?",
-        "Que anoto en su libreta?",
-        "Que prometio hacer al final?",
+        "¿Desde dónde observó el cielo Nora?",
+        "¿Qué anotó en su libreta?",
+        "¿Qué prometió hacer al final?",
       ],
     },
   ],
@@ -186,7 +186,7 @@ const speedTextsByLevel = {
   medium: speedTexts,
   hard: [
     ...speedTexts,
-    "Martin prepara una maqueta para ciencias. Corta cartulina, pega etiquetas y revisa un esquema con su madre. Cuando termina, practica una explicacion corta frente al espejo. Repite dos veces, corrige una palabra y respira profundo antes de guardar todo en su mochila para la presentacion de manana.",
+    "Martín prepara una maqueta para ciencias. Corta cartulina, pega etiquetas y revisa un esquema con su madre. Cuando termina, practica una explicación corta frente al espejo. Repite dos veces, corrige una palabra y respira profundo antes de guardar todo en su mochila para la presentación de mañana.",
   ],
 };
 
@@ -246,13 +246,13 @@ function nowIsoDate() {
 function labelTestType(type) {
   if (type === "patterns") return "Patrones";
   if (type === "pseudo") return "Pseudopalabras";
-  if (type === "phonology") return "Conciencia fonologica";
-  if (type === "reading") return "Comprension";
+  if (type === "phonology") return "Conciencia fonológica";
+  if (type === "reading") return "Comprensión";
   return "Velocidad";
 }
 
 function labelLevel(level) {
-  if (level === "easy") return "Nivel facil";
+  if (level === "easy") return "Nivel fácil";
   if (level === "hard") return "Nivel avanzado";
   return "Nivel medio";
 }
@@ -358,7 +358,7 @@ function buildPhonologyDataset(count) {
     level === "easy"
       ? phonologyPrompts.slice(0, 6)
       : level === "hard"
-      ? [...phonologyPrompts, "Invierte sonidos: si digo L-O-S, que palabra forma?", "Sustituye silaba: cambia MA en MALO por SO."]
+      ? [...phonologyPrompts, "Invierte sonidos: si digo L-O-S, ¿qué palabra forma?", "Sustituye sílaba: cambia MA en MALO por SO."]
       : phonologyPrompts;
   const repeated = [];
   while (repeated.length < count) {
@@ -401,7 +401,7 @@ function renderLabPreview() {
     return;
   }
 
-  labPreviewNote.textContent = `Lista preparada: ${labState.prepared.items.length} items.`;
+  labPreviewNote.textContent = `Lista preparada: ${labState.prepared.items.length} ítems.`;
   const maxPreview = 18;
   labState.prepared.items.slice(0, maxPreview).forEach((item, index) => {
     const li = document.createElement("li");
@@ -479,8 +479,8 @@ function prepareLabData() {
 
   setLabStatus(
     "Datos listos",
-    `${prepared.items.length} items para ${labelTestType(prepared.type)} (${labelLevel(prepared.level)}).`,
-    "Pulsa Iniciar sesion para comenzar el juego de lectura."
+    `${prepared.items.length} ítems para ${labelTestType(prepared.type)} (${labelLevel(prepared.level)}).`,
+    "Pulsa Iniciar sesión para comenzar el juego de lectura."
   );
 
   setSessionView(false);
@@ -503,8 +503,8 @@ function updateStars() {
 function displayCurrentLabItem() {
   if (!labState.active) return;
   const current = labState.active.items[labState.active.index];
-  labProgress.textContent = `Item ${labState.active.index + 1} de ${labState.active.items.length}`;
-  labStimulus.textContent = current?.prompt || "Fin de sesion";
+  labProgress.textContent = `Ítem ${labState.active.index + 1} de ${labState.active.items.length}`;
+  labStimulus.textContent = current?.prompt || "Fin de sesión";
   updateStars();
 }
 
@@ -537,7 +537,7 @@ function pauseSpeedForAdultPanel() {
   finishSpeedNowBtn.disabled = false;
   finishSpeedNowBtn.textContent = "Reanudar minuto";
   setLabStatus(
-    "Sesion en pausa",
+    "Sesión en pausa",
     `Tiempo restante: ${formatTimer(labState.speedRemaining)}.`,
     "Pulsa Solo niño y luego Reanudar minuto para continuar."
   );
@@ -548,7 +548,7 @@ function resumeSpeedFromPause() {
 
   setSessionView(true);
   setLabStatus(
-    "Sesion activa",
+    "Sesión activa",
     "Prueba de velocidad en curso (1 minuto).",
     "Pulsa Finalizar minuto cuando termine el tiempo."
   );
@@ -594,16 +594,16 @@ function startLabSession() {
   labTimer.textContent = isSpeed ? formatTimer(60) : formatTimer(0);
   displayCurrentLabItem();
   setLabStatus(
-    "Sesion activa",
+    "Sesión activa",
     `Prueba: ${labelTestType(labState.active.type)} (${labelLevel(labState.active.level)}).`,
-    "Marca cada intento para avanzar en la mision."
+    "Marca cada intento para avanzar en la misión."
   );
 
   setSessionView(true);
 
   if (isSpeed) {
     setLabStatus(
-      "Sesion activa",
+      "Sesión activa",
       "Prueba de velocidad en curso (1 minuto).",
       "Pulsa Finalizar minuto cuando termine el tiempo."
     );
@@ -636,12 +636,12 @@ function finishLabSession(summary) {
   };
 
   setLabStatus(
-    "Sesion completada",
+    "Sesión completada",
     stats,
     "Si te sirve, guarda este resultado en el registro de seguimiento."
   );
 
-  labStimulus.textContent = "Gran trabajo! Prueba completada.";
+  labStimulus.textContent = "¡Gran trabajo! Prueba completada.";
   updateStars();
   saveLabToLogBtn.disabled = false;
   exportLabPdfBtn.disabled = false;
@@ -671,7 +671,7 @@ function completeRegularFlow() {
   const advice =
     errorRate > 30
       ? "Alerta: error >30%. Repite con apoyo y considera consulta profesional."
-      : "Buen avance. Mantener practica regular y seguimiento.";
+      : "Buen avance. Mantener la práctica regular y el seguimiento.";
 
   finishLabSession(
     `${labState.active.correct} correctos, ${labState.active.incorrect} errores, ${labState.active.skipped} omitidos. Error ${errorRate}%.`
@@ -708,8 +708,8 @@ function finishSpeedSession() {
   labStimulus.textContent = "Tiempo finalizado. Escribe las palabras correctas.";
   setLabStatus(
     "Capturando resultado",
-    "Introduce palabras correctas leidas en 1 minuto.",
-    "Busca consistencia entre sesiones, no perfeccion total."
+    "Introduce palabras correctas leídas en 1 minuto.",
+    "Busca consistencia entre sesiones, no perfección total."
   );
 }
 
@@ -721,10 +721,10 @@ function saveSpeedResult(event) {
   if (Number.isNaN(ppm)) return;
 
   let level = "Buen ritmo";
-  let note = "Ritmo adecuado para inicio lector. Mantener practica y comprension.";
+  let note = "Ritmo adecuado para inicio lector. Mantener la práctica y la comprensión.";
   if (ppm < 45) {
     level = "Alerta de velocidad";
-    note = "Por debajo de 45 ppm. Conviene evaluacion y apoyo especifico.";
+    note = "Por debajo de 45 ppm. Conviene evaluación y apoyo específico.";
   } else if (ppm < 55) {
     level = "Ritmo intermedio";
     note = "Cerca del umbral. Repetir prueba en 2 semanas y comparar.";
@@ -739,7 +739,7 @@ function saveSpeedResult(event) {
   };
 
   speedResultForm.hidden = true;
-  labProgress.textContent = "Item 1 de 1";
+  labProgress.textContent = "Ítem 1 de 1";
   labTimer.textContent = formatTimer(60);
   labStimulus.textContent = `Resultado guardado: ${ppm} palabras/minuto.`;
   finishLabSession(`Velocidad registrada: ${ppm} ppm.`);
@@ -754,7 +754,7 @@ function saveLabResultToLog() {
   if (!labState.lastLogEntry) return;
   appendLogEntry(labState.lastLogEntry);
   saveLabToLogBtn.disabled = true;
-  labAdvice.textContent = "Resultado guardado. Ya se vera en la guia principal.";
+  labAdvice.textContent = "Resultado guardado. Ya se verá en la guía principal.";
 }
 
 function exportLabSessionPdf() {
@@ -764,7 +764,7 @@ function exportLabSessionPdf() {
   const row = labState.lastLogEntry;
   const printWindow = window.open("", "_blank", "width=900,height=700");
   if (!printWindow) {
-    alert("No se pudo abrir la ventana de impresion. Revisa el bloqueador de popups.");
+    alert("No se pudo abrir la ventana de impresión. Revisa el bloqueador de popups.");
     return;
   }
 
@@ -779,7 +779,7 @@ function exportLabSessionPdf() {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Reporte de sesion - Zona niños</title>
+    <title>Informe de sesión - Zona niños</title>
     <style>
       body { font-family: Arial, sans-serif; margin: 28px; color: #102b2a; }
       h1 { margin: 0 0 6px; color: #0f76ff; }
@@ -794,13 +794,13 @@ function exportLabSessionPdf() {
   </head>
   <body>
     <h1>Kid Read Learning - Zona niños</h1>
-    <p>Reporte de sesion</p>
+    <p>Informe de sesión</p>
 
     <div class="meta">
       <p><strong>Prueba:</strong> ${safe(summary.test)}</p>
       <p><strong>Nivel:</strong> ${safe(summary.level)}</p>
       <p><strong>Inicio:</strong> ${safe(startedAt)}</p>
-      <p><strong>Duracion:</strong> ${safe(formatTimer(summary.durationSec))}</p>
+      <p><strong>Duración:</strong> ${safe(formatTimer(summary.durationSec))}</p>
       <p><strong>Resumen:</strong> ${safe(summary.stats)}</p>
     </div>
 
@@ -826,7 +826,7 @@ function exportLabSessionPdf() {
       </tbody>
     </table>
 
-    <div class="note"><strong>Recomendacion:</strong> ${safe(summary.advice)}</div>
+    <div class="note"><strong>Recomendación:</strong> ${safe(summary.advice)}</div>
   </body>
 </html>`;
 
