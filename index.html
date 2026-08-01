@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Guia interactiva de lectura - 7 anos</title>
+    <title>Guia interactiva para inicio lector</title>
     <meta
       name="description"
-      content="Guia interactiva para familias: detectar senales de alerta en lectura, aplicar pruebas en casa y saber cuando acudir a evaluacion profesional."
+      content="Guia interactiva para familias: detectar senales en ninos que empiezan a leer, aplicar pruebas en casa y saber cuando acudir a evaluacion profesional."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +25,7 @@
       <nav aria-label="Navegacion principal">
         <a href="#alertas">Alertas</a>
         <a href="#pruebas">Pruebas</a>
-        <a href="#laboratorio">Laboratorio</a>
+        <a href="zona-ninos.html">Zona ninos</a>
         <a href="#evaluador">Evaluador</a>
         <a href="#recursos">Recursos</a>
       </nav>
@@ -35,8 +35,8 @@
       <section class="hero reveal" id="inicio">
         <p class="eyebrow">Lectura temprana con accion clara</p>
         <h1>
-          Entiende las dificultades de lectura en una nina de 7 anos y actua
-          desde hoy
+          Entiende las dificultades de lectura en ninos que empiezan a leer y
+          actua desde hoy
         </h1>
         <p>
           Esta guia te ayuda a observar senales, hacer pruebas en casa y tomar
@@ -44,9 +44,13 @@
           diagnostico clinico, pero si acelera una intervencion temprana.
         </p>
         <div class="hero-actions">
+          <a class="btn btn-kids" href="zona-ninos.html">Entrar al juego de lectura</a>
           <a class="btn btn-primary" href="#alertas">Empezar checklist</a>
           <a class="btn btn-secondary" href="#pasos">Ver plan paso a paso</a>
         </div>
+        <p class="hero-kids-note">
+          Tip: usa la zona ninos en tablet o pantalla completa para una mejor experiencia.
+        </p>
       </section>
 
       <section class="panel reveal" id="entender">
@@ -157,8 +161,8 @@
         <h2>Pruebas en casa (guiadas)</h2>
         <p class="section-intro">
           Hazlas sin presion, maximo 15-20 minutos por sesion y con tono de
-          juego. Si quieres ejecutarlas paso a paso con tarjetas y puntaje
-          automatico, usa el laboratorio de abajo.
+          juego. Si quieres ejecutarlas paso a paso con una experiencia visual
+          para ninos, usa la zona ninos.
         </p>
 
         <div class="accordion">
@@ -179,8 +183,8 @@
           <details>
             <summary>Prueba 3: Velocidad lectora</summary>
             <p>
-              Texto de 100 palabras durante 1 minuto. Referencia orientativa a
-              los 7 anos: 60-90 ppm. Alerta por debajo de 50 ppm.
+              Texto de 100 palabras durante 1 minuto. Referencia orientativa en
+              inicio lector: 50-90 ppm, con alerta por debajo de 45-50 ppm.
             </p>
           </details>
           <details>
@@ -201,127 +205,14 @@
       </section>
 
       <section class="panel reveal" id="laboratorio">
-        <h2>Laboratorio interactivo de pruebas</h2>
+        <h2>Zona ninos separada</h2>
         <p class="section-intro">
-          Prepara datos, muestra estimulos al nino y registra resultados de la
-          sesion sin hacerlo en papel.
+          La experiencia para el nino esta en una pagina aparte, con colores,
+          tipografia y tarjetas grandes para mantener atencion y motivacion.
         </p>
-
-        <div class="lab-grid">
-          <div class="lab-setup">
-            <form id="testLabSetup" class="lab-form">
-              <label>
-                Tipo de prueba
-                <select id="labTestType">
-                  <option value="patterns">Patrones silabicos</option>
-                  <option value="pseudo">Pseudopalabras</option>
-                  <option value="phonology">Conciencia fonologica</option>
-                  <option value="reading">Comprension lectora</option>
-                  <option value="speed">Velocidad lectora (1 minuto)</option>
-                </select>
-              </label>
-
-              <label>
-                Nivel
-                <select id="labDifficulty">
-                  <option value="easy">Facil</option>
-                  <option value="medium" selected>Medio</option>
-                  <option value="hard">Avanzado</option>
-                </select>
-              </label>
-
-              <label id="labCountWrap">
-                Cantidad de items
-                <input type="number" id="labItemCount" min="5" max="30" value="15" />
-              </label>
-
-              <fieldset id="patternPicker">
-                <legend>Patrones a incluir</legend>
-                <label><input type="checkbox" name="pattern" value="al" checked /> al</label>
-                <label><input type="checkbox" name="pattern" value="el" checked /> el</label>
-                <label><input type="checkbox" name="pattern" value="il" checked /> il</label>
-                <label><input type="checkbox" name="pattern" value="ol" checked /> ol</label>
-                <label><input type="checkbox" name="pattern" value="ul" checked /> ul</label>
-              </fieldset>
-
-              <div class="actions-row">
-                <button class="btn btn-tertiary" type="button" id="generateLabData">
-                  Preparar datos
-                </button>
-                <button class="btn btn-primary" type="button" id="startLabSession" disabled>
-                  Iniciar sesion
-                </button>
-              </div>
-            </form>
-
-            <div class="preview-box">
-              <p class="preview-title">Vista previa para adulto</p>
-              <p class="preview-note" id="labPreviewNote">
-                Prepara una prueba para ver lista de items antes de iniciar.
-              </p>
-              <ul id="labPreview" class="preview-list"></ul>
-            </div>
-          </div>
-
-          <aside class="lab-player" aria-live="polite">
-            <div class="lab-player-head">
-              <p class="result-label">Modo presentacion</p>
-              <button class="btn btn-secondary btn-small" type="button" id="toggleKidView">
-                Pantalla grande
-              </button>
-            </div>
-
-            <p class="lab-progress" id="labProgress">Item 0 de 0</p>
-            <p class="lab-timer" id="labTimer">00:00</p>
-            <div class="lab-reading" id="labReadingText" hidden></div>
-            <div class="stimulus-card" id="labStimulus">
-              Aqui apareceran palabras, preguntas o instrucciones para la prueba.
-            </div>
-
-            <div class="lab-controls" id="labMainControls">
-              <button class="btn btn-primary" type="button" id="labCorrect" disabled>
-                Correcto
-              </button>
-              <button class="btn btn-tertiary" type="button" id="labIncorrect" disabled>
-                Error
-              </button>
-              <button class="btn btn-secondary" type="button" id="labSkip" disabled>
-                Omitir
-              </button>
-            </div>
-
-            <div class="lab-controls" id="speedControls" hidden>
-              <button class="btn btn-primary" type="button" id="finishSpeedNow" disabled>
-                Finalizar minuto
-              </button>
-            </div>
-
-            <form id="speedResultForm" class="speed-form" hidden>
-              <label>
-                Palabras correctas leidas en 1 minuto
-                <input type="number" id="speedWordsRead" min="0" max="180" required />
-              </label>
-              <button class="btn btn-primary" type="submit">Guardar resultado</button>
-            </form>
-          </aside>
-        </div>
-
-        <div class="result-card lab-summary">
-          <p class="result-label">Estado de sesion</p>
-          <p class="result-level" id="labStatus">Sin sesion activa</p>
-          <p class="result-score" id="labStats">Prepara datos para comenzar.</p>
-          <p class="result-message" id="labAdvice">
-            Al terminar una prueba, podras enviar automaticamente el resultado al
-            registro de seguimiento.
-          </p>
-          <div class="actions-row">
-            <button class="btn btn-tertiary" type="button" id="saveLabToLog" disabled>
-              Guardar en registro
-            </button>
-            <button class="btn btn-secondary" type="button" id="exportLabPdf" disabled>
-              Exportar sesion a PDF
-            </button>
-          </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="zona-ninos.html">Abrir zona ninos</a>
+          <a class="btn btn-tertiary" href="#registro">Volver al registro</a>
         </div>
       </section>
 
@@ -463,7 +354,7 @@
               <tr>
                 <td>Aprendo a leer las silabas</td>
                 <td>Patrones silabicos concretos</td>
-                <td>6-8</td>
+                <td>Inicio lector</td>
                 <td>Refuerzo</td>
               </tr>
               <tr>
@@ -475,7 +366,7 @@
               <tr>
                 <td>Colibri / Flash Fiction DYS</td>
                 <td>Lectura placentera adaptada</td>
-                <td>7+</td>
+                <td>Inicio lector avanzado</td>
                 <td>Lectura facil</td>
               </tr>
             </tbody>

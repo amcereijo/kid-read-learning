@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zona ninos - pruebas de lectura</title>
+    <meta
+      name="description"
+      content="Zona de pruebas de lectura para ninos en inicio lector: visual, divertida y guiada para familias y docentes."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Nunito:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="zona-ninos.css" />
+  </head>
+  <body>
+    <div class="bg"></div>
+    <header class="topbar">
+      <a class="back-link" href="index.html">Volver a guia familiar</a>
+      <p class="brand">Zona ninos - Mision lectura</p>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Espacio infantil interactivo</p>
+        <h1>Jugamos a leer: retos cortos, colores vivos y grandes tarjetas</h1>
+        <p>
+          Esta pantalla esta pensada para ninos en edad de empezar a leer. Un
+          adulto prepara la prueba y luego presenta cada reto con botones simples.
+        </p>
+      </section>
+
+      <section class="layout">
+        <aside class="panel setup-panel">
+          <h2>Panel adulto</h2>
+          <form id="testLabSetup" class="lab-form">
+            <label>
+              Tipo de prueba
+              <select id="labTestType">
+                <option value="patterns">Patrones silabicos</option>
+                <option value="pseudo">Pseudopalabras</option>
+                <option value="phonology">Conciencia fonologica</option>
+                <option value="reading">Comprension lectora</option>
+                <option value="speed">Velocidad lectora (1 minuto)</option>
+              </select>
+            </label>
+
+            <label>
+              Nivel
+              <select id="labDifficulty">
+                <option value="easy">Facil</option>
+                <option value="medium" selected>Medio</option>
+                <option value="hard">Avanzado</option>
+              </select>
+            </label>
+
+            <label id="labCountWrap">
+              Cantidad de items
+              <input type="number" id="labItemCount" min="5" max="30" value="15" />
+            </label>
+
+            <fieldset id="patternPicker">
+              <legend>Patrones</legend>
+              <label><input type="checkbox" name="pattern" value="al" checked /> al</label>
+              <label><input type="checkbox" name="pattern" value="el" checked /> el</label>
+              <label><input type="checkbox" name="pattern" value="il" checked /> il</label>
+              <label><input type="checkbox" name="pattern" value="ol" checked /> ol</label>
+              <label><input type="checkbox" name="pattern" value="ul" checked /> ul</label>
+            </fieldset>
+
+            <div class="actions-row">
+              <button class="btn btn-soft" type="button" id="generateLabData">
+                Preparar datos
+              </button>
+              <button class="btn btn-primary" type="button" id="startLabSession" disabled>
+                Iniciar sesion
+              </button>
+            </div>
+          </form>
+
+          <div class="preview-box">
+            <p class="preview-title">Vista previa (adulto)</p>
+            <p class="preview-note" id="labPreviewNote">
+              Prepara una prueba para ver la lista antes de iniciar.
+            </p>
+            <ul id="labPreview" class="preview-list"></ul>
+          </div>
+
+          <div class="summary-card">
+            <p class="summary-label">Estado de sesion</p>
+            <p class="summary-level" id="labStatus">Sin sesion activa</p>
+            <p class="summary-score" id="labStats">Prepara datos para comenzar.</p>
+            <p class="summary-message" id="labAdvice">
+              Puedes guardar el resultado en el registro de la guia principal.
+            </p>
+            <div class="actions-row">
+              <button class="btn btn-soft" type="button" id="saveLabToLog" disabled>
+                Guardar en registro
+              </button>
+              <button class="btn btn-outline" type="button" id="exportLabPdf" disabled>
+                Exportar PDF
+              </button>
+            </div>
+          </div>
+        </aside>
+
+        <section class="panel stage-panel" aria-live="polite">
+          <div class="stage-head">
+            <p class="progress" id="labProgress">Item 0 de 0</p>
+            <p class="timer" id="labTimer">00:00</p>
+            <button class="btn btn-outline btn-mini" type="button" id="toggleKidView">
+              Modo grande
+            </button>
+          </div>
+
+          <div class="star-row" id="starRow" aria-hidden="true">☆☆☆☆☆</div>
+
+          <div class="lab-reading" id="labReadingText" hidden></div>
+          <div class="stimulus-card" id="labStimulus">
+            Hola! Aqui apareceran palabras, preguntas y retos de lectura.
+          </div>
+
+          <div class="lab-controls" id="labMainControls">
+            <button class="btn btn-primary" type="button" id="labCorrect" disabled>
+              Lo logro
+            </button>
+            <button class="btn btn-warn" type="button" id="labIncorrect" disabled>
+              Le costo
+            </button>
+            <button class="btn btn-outline" type="button" id="labSkip" disabled>
+              Saltar
+            </button>
+          </div>
+
+          <div class="lab-controls" id="speedControls" hidden>
+            <button class="btn btn-primary" type="button" id="finishSpeedNow" disabled>
+              Finalizar minuto
+            </button>
+          </div>
+
+          <form id="speedResultForm" class="speed-form" hidden>
+            <label>
+              Palabras correctas en 1 minuto
+              <input type="number" id="speedWordsRead" min="0" max="180" required />
+            </label>
+            <button class="btn btn-primary" type="submit">Guardar resultado</button>
+          </form>
+        </section>
+      </section>
+    </main>
+
+    <script src="zona-ninos.js"></script>
+  </body>
+</html>

@@ -29,6 +29,7 @@ body {
   background: var(--bg);
   line-height: 1.5;
   position: relative;
+  overflow-x: hidden;
 }
 
 .bg-aurora,
@@ -140,6 +141,7 @@ main {
   border-radius: 999px;
   padding: 0.75rem 1.15rem;
   font: inherit;
+  min-height: 44px;
   cursor: pointer;
   text-decoration: none;
   display: inline-flex;
@@ -169,6 +171,21 @@ main {
 .btn-tertiary {
   color: #0e5d57;
   background: var(--primary-soft);
+}
+
+.btn-kids {
+  color: #ffffff;
+  background:
+    linear-gradient(135deg, #ff7a18 0%, #ff3f81 46%, #5b8cff 100%);
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  font-weight: 700;
+  box-shadow: 0 10px 26px rgba(255, 85, 120, 0.28);
+}
+
+.hero-kids-note {
+  margin-top: 0.8rem;
+  color: #c4f6ee;
+  font-size: 0.93rem;
 }
 
 .panel {
@@ -507,7 +524,7 @@ button:focus-visible {
 table {
   width: 100%;
   border-collapse: collapse;
-  min-width: 610px;
+  min-width: 520px;
 }
 
 th,
@@ -573,9 +590,37 @@ footer {
 }
 
 @media (max-width: 680px) {
+  .topbar {
+    align-items: flex-start;
+  }
+
+  nav {
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  nav a {
+    flex: 0 0 auto;
+    border: 1px solid #cfe0db;
+    border-radius: 999px;
+    background: #f8fbf8;
+    padding: 0.35rem 0.7rem;
+  }
+
   .hero,
   .panel {
     padding: 1rem;
+  }
+
+  .hero-actions {
+    gap: 0.6rem;
+  }
+
+  .hero-kids-note {
+    margin-top: 0.6rem;
   }
 
   .cards-4,
@@ -590,5 +635,19 @@ footer {
 
   .actions-row {
     flex-direction: column;
+  }
+
+  table {
+    min-width: 460px;
+  }
+}
+
+@media (max-width: 420px) {
+  main {
+    padding: 0 0.75rem 2rem;
+  }
+
+  footer {
+    padding: 0 0.75rem;
   }
 }
