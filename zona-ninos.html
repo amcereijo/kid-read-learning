@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zona ninos - pruebas de lectura</title>
+    <title>Zona niños - pruebas de lectura</title>
     <meta
       name="description"
-      content="Zona de pruebas de lectura para ninos en inicio lector: visual, divertida y guiada para familias y docentes."
+      content="Zona de pruebas de lectura para niños en inicio lector: visual, divertida y guiada para familias y docentes."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,7 +20,7 @@
     <div class="bg"></div>
     <header class="topbar">
       <a class="back-link" href="index.html">Volver a guia familiar</a>
-      <p class="brand">Zona ninos - Mision lectura</p>
+      <p class="brand">Zona niños - Mision lectura</p>
     </header>
 
     <main>
@@ -28,7 +28,7 @@
         <p class="eyebrow">Espacio infantil interactivo</p>
         <h1>Jugamos a leer: retos cortos, colores vivos y grandes tarjetas</h1>
         <p>
-          Esta pantalla esta pensada para ninos en edad de empezar a leer. Un
+          Esta pantalla esta pensada para niños en edad de empezar a leer. Un
           adulto prepara la prueba y luego presenta cada reto con botones simples.
         </p>
       </section>
@@ -63,12 +63,97 @@
             </label>
 
             <fieldset id="patternPicker">
-              <legend>Patrones</legend>
-              <label><input type="checkbox" name="pattern" value="al" checked /> al</label>
-              <label><input type="checkbox" name="pattern" value="el" checked /> el</label>
-              <label><input type="checkbox" name="pattern" value="il" checked /> il</label>
-              <label><input type="checkbox" name="pattern" value="ol" checked /> ol</label>
-              <label><input type="checkbox" name="pattern" value="ul" checked /> ul</label>
+              <legend>Patrones silabicos</legend>
+              <div class="pattern-quick-actions" aria-label="Acciones rapidas de patrones">
+                <button type="button" class="btn btn-outline btn-mini" id="selectBasicPatterns">
+                  Seleccionar basicos
+                </button>
+                <button type="button" class="btn btn-outline btn-mini" id="selectAllPatterns">
+                  Seleccionar todos
+                </button>
+                <button type="button" class="btn btn-outline btn-mini" id="clearPatterns">
+                  Limpiar
+                </button>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Inversas base</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="al" checked /> al</label>
+                  <label><input type="checkbox" name="pattern" value="el" checked /> el</label>
+                  <label><input type="checkbox" name="pattern" value="il" checked /> il</label>
+                  <label><input type="checkbox" name="pattern" value="ol" checked /> ol</label>
+                  <label><input type="checkbox" name="pattern" value="ul" checked /> ul</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Inversas con r</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="ar" /> ar</label>
+                  <label><input type="checkbox" name="pattern" value="er" /> er</label>
+                  <label><input type="checkbox" name="pattern" value="ir" /> ir</label>
+                  <label><input type="checkbox" name="pattern" value="or" /> or</label>
+                  <label><input type="checkbox" name="pattern" value="ur" /> ur</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Final nasal</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="an" /> an</label>
+                  <label><input type="checkbox" name="pattern" value="en" /> en</label>
+                  <label><input type="checkbox" name="pattern" value="in" /> in</label>
+                  <label><input type="checkbox" name="pattern" value="on" /> on</label>
+                  <label><input type="checkbox" name="pattern" value="un" /> un</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Final s</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="as" /> as</label>
+                  <label><input type="checkbox" name="pattern" value="es" /> es</label>
+                  <label><input type="checkbox" name="pattern" value="is" /> is</label>
+                  <label><input type="checkbox" name="pattern" value="os" /> os</label>
+                  <label><input type="checkbox" name="pattern" value="us" /> us</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Consonantes trabadas</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="br" /> br</label>
+                  <label><input type="checkbox" name="pattern" value="tr" /> tr</label>
+                  <label><input type="checkbox" name="pattern" value="pl" /> pl</label>
+                  <label><input type="checkbox" name="pattern" value="cl" /> cl</label>
+                  <label><input type="checkbox" name="pattern" value="gr" /> gr</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Digrafos frecuentes</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="ch" /> ch</label>
+                  <label><input type="checkbox" name="pattern" value="ll" /> ll</label>
+                  <label><input type="checkbox" name="pattern" value="rr" /> rr</label>
+                  <label><input type="checkbox" name="pattern" value="que" /> que</label>
+                  <label><input type="checkbox" name="pattern" value="qui" /> qui</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Combinaciones vocalicas</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="pattern" value="ia" /> ia</label>
+                  <label><input type="checkbox" name="pattern" value="ie" /> ie</label>
+                  <label><input type="checkbox" name="pattern" value="ua" /> ua</label>
+                  <label><input type="checkbox" name="pattern" value="ue" /> ue</label>
+                  <label><input type="checkbox" name="pattern" value="ai" /> ai</label>
+                  <label><input type="checkbox" name="pattern" value="au" /> au</label>
+                  <label><input type="checkbox" name="pattern" value="ui" /> ui</label>
+                </div>
+              </div>
             </fieldset>
 
             <div class="actions-row">
@@ -111,9 +196,14 @@
           <div class="stage-head">
             <p class="progress" id="labProgress">Item 0 de 0</p>
             <p class="timer" id="labTimer">00:00</p>
-            <button class="btn btn-outline btn-mini" type="button" id="toggleKidView">
-              Modo grande
-            </button>
+            <div class="stage-head-actions">
+              <button class="btn btn-outline btn-mini" type="button" id="toggleKidView">
+                Modo grande
+              </button>
+              <button class="btn btn-outline btn-mini" type="button" id="backToAdultPanel">
+                Panel adulto
+              </button>
+            </div>
           </div>
 
           <div class="star-row" id="starRow" aria-hidden="true">☆☆☆☆☆</div>

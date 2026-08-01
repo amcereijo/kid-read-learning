@@ -113,6 +113,14 @@ main {
   padding-bottom: 2rem;
 }
 
+.layout.session-active {
+  grid-template-columns: 1fr;
+}
+
+.layout.session-active .setup-panel {
+  display: none;
+}
+
 .panel {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -150,14 +158,44 @@ fieldset {
   border: 2px dashed #bad0f3;
   border-radius: 14px;
   padding: 0.55rem;
-  display: flex;
-  gap: 0.7rem;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 0.65rem;
 }
 
 legend {
   padding: 0 0.25rem;
   font-weight: 800;
+}
+
+.pattern-group {
+  border: 1px solid #d8e3f6;
+  border-radius: 12px;
+  padding: 0.55rem;
+  background: #ffffff;
+}
+
+.pattern-quick-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.pattern-quick-actions .btn {
+  min-height: 36px;
+}
+
+.pattern-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #355a94;
+}
+
+.pattern-options {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.75rem;
 }
 
 .actions-row {
@@ -261,6 +299,12 @@ legend {
   flex-wrap: wrap;
 }
 
+.stage-head-actions {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
 .progress,
 .timer {
   margin: 0;
@@ -355,8 +399,15 @@ legend {
     align-items: center;
   }
 
-  .stage-head .btn-mini {
+  .stage-head-actions {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .pattern-quick-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .star-row {

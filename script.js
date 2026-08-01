@@ -165,6 +165,9 @@ function setupQuickEvaluator() {
   quickEvalForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
+    const itemCountField = document.getElementById("errPatrones");
+    const expectedItems = Number(itemCountField.max) || 15;
+
     const payload = {
       errors: Number(document.getElementById("errPatrones").value),
       time: Number(document.getElementById("timePatrones").value),
@@ -173,6 +176,14 @@ function setupQuickEvaluator() {
       fono: document.getElementById("fono").value,
       comprension: document.getElementById("comprension").value,
     };
+
+    if (payload.errors > expectedItems) {
+      itemCountField.setCustomValidity(`El maximo de errores debe ser ${expectedItems}.`);
+      itemCountField.reportValidity();
+      return;
+    }
+
+    itemCountField.setCustomValidity("");
 
     const score = evaluateQuickForm(payload);
     paintEval(score);

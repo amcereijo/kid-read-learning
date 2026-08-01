@@ -3,17 +3,23 @@ const storageKeys = {
 };
 
 const labTestType = document.getElementById("labTestType");
+const layout = document.querySelector(".layout");
+const setupPanel = document.querySelector(".setup-panel");
 const labDifficulty = document.getElementById("labDifficulty");
 const labItemCount = document.getElementById("labItemCount");
 const labCountWrap = document.getElementById("labCountWrap");
 const patternPicker = document.getElementById("patternPicker");
 const generateLabDataBtn = document.getElementById("generateLabData");
 const startLabSessionBtn = document.getElementById("startLabSession");
+const selectBasicPatternsBtn = document.getElementById("selectBasicPatterns");
+const selectAllPatternsBtn = document.getElementById("selectAllPatterns");
+const clearPatternsBtn = document.getElementById("clearPatterns");
 
 const labPreview = document.getElementById("labPreview");
 const labPreviewNote = document.getElementById("labPreviewNote");
 
 const toggleKidViewBtn = document.getElementById("toggleKidView");
+const backToAdultPanelBtn = document.getElementById("backToAdultPanel");
 const labProgress = document.getElementById("labProgress");
 const labTimer = document.getElementById("labTimer");
 const labReadingText = document.getElementById("labReadingText");
@@ -40,26 +46,54 @@ const patternWordPools = {
   il: ["mil", "fil", "til", "sil", "vil", "ril", "gil", "nil", "pil", "cil"],
   ol: ["sol", "col", "rol", "mol", "pol", "vol", "dol", "fol", "bol", "tol"],
   ul: ["tul", "pul", "zul", "mul", "ful", "sul", "rul", "kul", "hul", "gul"],
+  ar: ["mar", "barco", "carta", "tarde", "arco", "caracol", "jardin", "armario", "par", "bar"],
+  er: ["ver", "pera", "verde", "cero", "tener", "hermano", "viernes", "merienda", "ser", "leer"],
+  ir: ["ir", "mirar", "sirena", "pirata", "tirar", "girar", "jirafa", "iniciar", "viruta", "circular"],
+  or: ["flor", "color", "motor", "doctor", "corona", "oruga", "dormir", "corto", "tesoro", "amor"],
+  ur: ["sur", "burro", "puro", "curar", "urgente", "turbina", "murcielago", "turista", "curioso", "muro"],
+  an: ["pan", "cantar", "manta", "banana", "santa", "campana", "pantano", "andar", "ancla", "mancha"],
+  en: ["tren", "lente", "ventana", "tener", "encender", "centro", "diente", "lengua", "mensaje", "enano"],
+  in: ["fin", "pintar", "tinta", "invierno", "camino", "rincon", "cinta", "pirinola", "brinco", "intento"],
+  on: ["boton", "raton", "montana", "sonido", "corazon", "tronco", "onda", "horizonte", "poncho", "sombra"],
+  un: ["uno", "junta", "mundo", "punto", "lunes", "cuna", "uniforme", "murmullo", "tunel", "nunca"],
+  as: ["casa", "masa", "vaso", "paso", "raspa", "gafas", "tasas", "islas", "asado", "basura"],
+  es: ["mesa", "peso", "queso", "beso", "estrella", "escoba", "escuela", "espejo", "tesoro", "esquina"],
+  is: ["isla", "lista", "pista", "historia", "misterio", "visita", "camisa", "artista", "isidro", "fisica"],
+  os: ["oso", "coso", "rosa", "nosotros", "cosa", "bosque", "poste", "costura", "fosforo", "hostal"],
+  us: ["musica", "bus", "gusano", "susto", "justo", "ruso", "pulso", "lustre", "custodia", "susurro"],
+  br: ["brazo", "brisa", "brocha", "brillo", "bravo", "bruja", "brinco", "abrigo", "sombrero", "bronce"],
+  tr: ["tren", "trapo", "trigo", "trueno", "estrella", "trenza", "trofeo", "triste", "tractor", "tramo"],
+  pl: ["plato", "pluma", "planeta", "playa", "plaza", "pliego", "explorar", "cumple", "pliego", "soplar"],
+  cl: ["clase", "clavo", "clima", "clown", "tecla", "claro", "inclinar", "bicicleta", "ancla", "clorofila"],
+  gr: ["grano", "grifo", "gruta", "grande", "grillo", "gracia", "alegria", "tigre", "granja", "grueso"],
+  ch: ["chico", "chicle", "chocolate", "leche", "noche", "mochila", "charco", "chispa", "choza", "hecho"],
+  ll: ["llave", "lluvia", "caballo", "silla", "calle", "botella", "llegar", "llama", "amarillo", "rodilla"],
+  rr: ["perro", "carro", "torre", "barrio", "tierra", "cerrar", "guitarra", "ferrocarril", "correr", "arroz"],
+  que: ["queso", "queja", "quemar", "quedarse", "pequeno", "raqueta", "bosque", "quebrar", "paquete", "esquema"],
+  qui: ["quinto", "quitar", "quince", "quimica", "maquina", "equipo", "esquina", "tranquilo", "quijote", "liquido"],
+  ia: ["dia", "piano", "diario", "familia", "magia", "sandia", "bicicleta", "historia", "viaje", "tierra"],
+  ie: ["pie", "siete", "hielo", "diente", "cielo", "viento", "siembra", "tierra", "hierba", "fiebre"],
+  ua: ["agua", "cuadro", "guante", "cuatro", "igual", "lengua", "cuando", "suave", "guardian", "cuaderno"],
+  ue: ["huevo", "fuego", "juego", "escuela", "puerta", "cueva", "trueno", "hueso", "nueve", "fuerte"],
+  ai: ["aire", "baile", "caiman", "traigo", "paisaje", "maiz", "raiz", "caido", "paico", "vainilla"],
+  au: ["auto", "causa", "pausa", "aula", "aurora", "jaula", "laurel", "taurino", "audaz", "sauna"],
+  ui: ["ruido", "cuidar", "muy", "cuidado", "pinguino", "circuito", "construir", "fluido", "intuir", "guiar"],
 };
 
 const pseudoConsonants = ["b", "c", "d", "f", "g", "j", "k", "m", "n", "p", "r", "t", "v", "z"];
-const pseudoPatterns = ["al", "el", "il", "ol", "ul"];
+const pseudoPatterns = ["al", "el", "il", "ol", "ul", "ar", "er", "ir", "or", "ur", "an", "en", "in", "on", "un"];
+
+function makeDifficultyMap(wordPools, maxWordsPerPattern) {
+  const map = {};
+  Object.entries(wordPools).forEach(([pattern, words]) => {
+    map[pattern] = words.slice(0, Math.min(maxWordsPerPattern, words.length));
+  });
+  return map;
+}
 
 const patternDifficultyByLevel = {
-  easy: {
-    al: ["sal", "mal", "cal", "pal", "tal"],
-    el: ["mel", "tel", "del", "gel", "pel"],
-    il: ["mil", "fil", "sil", "pil", "til"],
-    ol: ["sol", "col", "rol", "bol", "pol"],
-    ul: ["tul", "pul", "mul", "sul", "ful"],
-  },
-  medium: {
-    al: ["sal", "mal", "cal", "tal", "dal", "ral", "pal", "gal"],
-    el: ["mel", "tel", "del", "nel", "sel", "vel", "bel", "gel"],
-    il: ["mil", "fil", "til", "sil", "vil", "ril", "gil", "pil"],
-    ol: ["sol", "col", "rol", "mol", "pol", "vol", "dol", "bol"],
-    ul: ["tul", "pul", "zul", "mul", "ful", "sul", "rul", "gul"],
-  },
+  easy: makeDifficultyMap(patternWordPools, 5),
+  medium: makeDifficultyMap(patternWordPools, 8),
   hard: patternWordPools,
 };
 
@@ -71,9 +105,11 @@ const pseudoConsonantsByLevel = {
 
 const pseudoPatternsByLevel = {
   easy: ["al", "ol"],
-  medium: ["al", "el", "ol", "ul"],
+  medium: ["al", "el", "ol", "ul", "ar", "er", "or", "an", "en", "on"],
   hard: pseudoPatterns,
 };
+
+const basicPatternSet = new Set(["al", "el", "il", "ol", "ul"]);
 
 const phonologyPrompts = [
   "Rima: Que rima con SOL? Opciones: col, pan, mesa.",
@@ -161,6 +197,8 @@ const labState = {
   lastSessionSummary: null,
   timerId: null,
   elapsedSeconds: 0,
+  speedRemaining: 60,
+  speedPaused: false,
   kidFocus: false,
 };
 
@@ -225,6 +263,28 @@ function setLabStatus(level, stats, advice) {
   labAdvice.textContent = advice;
 }
 
+function setSessionView(active) {
+  if (!layout) return;
+  const hasLiveSession = Boolean(labState.active && !labState.active.done);
+
+  if (active) {
+    layout.classList.add("session-active");
+    if (setupPanel) setupPanel.setAttribute("aria-hidden", "true");
+    if (backToAdultPanelBtn) {
+      backToAdultPanelBtn.hidden = !hasLiveSession;
+      backToAdultPanelBtn.textContent = "Panel adulto";
+    }
+    return;
+  }
+
+  layout.classList.remove("session-active");
+  if (setupPanel) setupPanel.removeAttribute("aria-hidden");
+  if (backToAdultPanelBtn) {
+    backToAdultPanelBtn.hidden = !hasLiveSession;
+    backToAdultPanelBtn.textContent = "Solo niño";
+  }
+}
+
 function setMainControlsEnabled(enabled) {
   labCorrectBtn.disabled = !enabled;
   labIncorrectBtn.disabled = !enabled;
@@ -241,6 +301,23 @@ function clearLabTimer() {
 function sanitizeSelectedPatterns() {
   const selected = Array.from(patternPicker.querySelectorAll("input[name='pattern']:checked"), (n) => n.value);
   return selected.length > 0 ? selected : ["al"];
+}
+
+function setPatternSelection(mode) {
+  const boxes = patternPicker.querySelectorAll("input[name='pattern']");
+  boxes.forEach((box) => {
+    if (mode === "all") {
+      box.checked = true;
+      return;
+    }
+
+    if (mode === "basic") {
+      box.checked = basicPatternSet.has(box.value);
+      return;
+    }
+
+    box.checked = false;
+  });
 }
 
 function buildPatternsDataset(count, selectedPatterns) {
@@ -405,6 +482,8 @@ function prepareLabData() {
     `${prepared.items.length} items para ${labelTestType(prepared.type)} (${labelLevel(prepared.level)}).`,
     "Pulsa Iniciar sesion para comenzar el juego de lectura."
   );
+
+  setSessionView(false);
 }
 
 function updateStars() {
@@ -431,16 +510,49 @@ function displayCurrentLabItem() {
 
 function beginSpeedTimer() {
   clearLabTimer();
-  labState.elapsedSeconds = 0;
-  labTimer.textContent = formatTimer(60);
+  if (!Number.isFinite(labState.speedRemaining) || labState.speedRemaining <= 0) {
+    labState.speedRemaining = 60;
+  }
+
+  labState.elapsedSeconds = 60 - labState.speedRemaining;
+  labState.speedPaused = false;
+  labTimer.textContent = formatTimer(labState.speedRemaining);
   finishSpeedNowBtn.disabled = false;
+  finishSpeedNowBtn.textContent = "Finalizar minuto";
 
   labState.timerId = setInterval(() => {
     labState.elapsedSeconds += 1;
-    const remaining = 60 - labState.elapsedSeconds;
-    labTimer.textContent = formatTimer(remaining);
-    if (remaining <= 0) finishSpeedSession();
+    labState.speedRemaining = Math.max(0, 60 - labState.elapsedSeconds);
+    labTimer.textContent = formatTimer(labState.speedRemaining);
+    if (labState.speedRemaining <= 0) finishSpeedSession();
   }, 1000);
+}
+
+function pauseSpeedForAdultPanel() {
+  if (!labState.active || labState.active.type !== "speed" || labState.active.done) return;
+  if (!labState.timerId) return;
+
+  clearLabTimer();
+  labState.speedPaused = true;
+  finishSpeedNowBtn.disabled = false;
+  finishSpeedNowBtn.textContent = "Reanudar minuto";
+  setLabStatus(
+    "Sesion en pausa",
+    `Tiempo restante: ${formatTimer(labState.speedRemaining)}.`,
+    "Pulsa Solo niño y luego Reanudar minuto para continuar."
+  );
+}
+
+function resumeSpeedFromPause() {
+  if (!labState.active || labState.active.type !== "speed" || !labState.speedPaused) return;
+
+  setSessionView(true);
+  setLabStatus(
+    "Sesion activa",
+    "Prueba de velocidad en curso (1 minuto).",
+    "Pulsa Finalizar minuto cuando termine el tiempo."
+  );
+  beginSpeedTimer();
 }
 
 function startLabSession() {
@@ -453,6 +565,8 @@ function startLabSession() {
   exportLabPdfBtn.disabled = true;
   labState.lastLogEntry = null;
   labState.lastSessionSummary = null;
+  labState.speedRemaining = 60;
+  labState.speedPaused = false;
 
   labState.active = {
     type: labState.prepared.type,
@@ -484,6 +598,8 @@ function startLabSession() {
     `Prueba: ${labelTestType(labState.active.type)} (${labelLevel(labState.active.level)}).`,
     "Marca cada intento para avanzar en la mision."
   );
+
+  setSessionView(true);
 
   if (isSpeed) {
     setLabStatus(
@@ -529,6 +645,9 @@ function finishLabSession(summary) {
   updateStars();
   saveLabToLogBtn.disabled = false;
   exportLabPdfBtn.disabled = false;
+  labState.speedPaused = false;
+  labState.speedRemaining = 0;
+  setSessionView(false);
 }
 
 function completeRegularFlow() {
@@ -579,7 +698,10 @@ function finishSpeedSession() {
   if (!labState.active || labState.active.type !== "speed") return;
 
   clearLabTimer();
+  labState.speedPaused = false;
+  labState.speedRemaining = 0;
   finishSpeedNowBtn.disabled = true;
+  finishSpeedNowBtn.textContent = "Finalizar minuto";
   speedResultForm.hidden = false;
   speedWordsRead.focus();
 
@@ -657,7 +779,7 @@ function exportLabSessionPdf() {
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Reporte de sesion - Zona ninos</title>
+    <title>Reporte de sesion - Zona niños</title>
     <style>
       body { font-family: Arial, sans-serif; margin: 28px; color: #102b2a; }
       h1 { margin: 0 0 6px; color: #0f76ff; }
@@ -671,7 +793,7 @@ function exportLabSessionPdf() {
     </style>
   </head>
   <body>
-    <h1>Kid Read Learning - Zona ninos</h1>
+    <h1>Kid Read Learning - Zona niños</h1>
     <p>Reporte de sesion</p>
 
     <div class="meta">
@@ -721,7 +843,14 @@ startLabSessionBtn.addEventListener("click", startLabSession);
 labCorrectBtn.addEventListener("click", () => markLabItem("correct"));
 labIncorrectBtn.addEventListener("click", () => markLabItem("incorrect"));
 labSkipBtn.addEventListener("click", () => markLabItem("skip"));
-finishSpeedNowBtn.addEventListener("click", finishSpeedSession);
+finishSpeedNowBtn.addEventListener("click", () => {
+  if (labState.speedPaused) {
+    resumeSpeedFromPause();
+    return;
+  }
+
+  finishSpeedSession();
+});
 speedResultForm.addEventListener("submit", saveSpeedResult);
 saveLabToLogBtn.addEventListener("click", saveLabResultToLog);
 exportLabPdfBtn.addEventListener("click", exportLabSessionPdf);
@@ -732,7 +861,44 @@ toggleKidViewBtn.addEventListener("click", () => {
   toggleKidViewBtn.textContent = labState.kidFocus ? "Vista normal" : "Modo grande";
 });
 
+if (backToAdultPanelBtn) {
+  backToAdultPanelBtn.addEventListener("click", () => {
+    if (layout && layout.classList.contains("session-active")) {
+      pauseSpeedForAdultPanel();
+      setSessionView(false);
+      const firstField = document.getElementById("labTestType");
+      if (firstField) firstField.focus();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    setSessionView(true);
+    if (labState.active && labState.active.type === "speed" && labState.speedPaused) {
+      resumeSpeedFromPause();
+    }
+  });
+}
+
+if (selectBasicPatternsBtn) {
+  selectBasicPatternsBtn.addEventListener("click", () => {
+    setPatternSelection("basic");
+  });
+}
+
+if (selectAllPatternsBtn) {
+  selectAllPatternsBtn.addEventListener("click", () => {
+    setPatternSelection("all");
+  });
+}
+
+if (clearPatternsBtn) {
+  clearPatternsBtn.addEventListener("click", () => {
+    setPatternSelection("none");
+  });
+}
+
 window.addEventListener("beforeunload", clearLabTimer);
 
 applyLabTypeUI();
 renderLabPreview();
+setSessionView(false);
