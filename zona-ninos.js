@@ -83,6 +83,11 @@ const patternWordPools = {
 const pseudoConsonants = ["b", "c", "d", "f", "g", "j", "k", "m", "n", "p", "r", "t", "v", "z"];
 const pseudoPatterns = ["al", "el", "il", "ol", "ul", "ar", "er", "ir", "or", "ur", "an", "en", "in", "on", "un"];
 
+const blendConsonants = ["br", "tr", "pr", "gr"];
+const blendVowels = ["a", "e", "i", "o", "u"];
+
+const blendSyllables = blendConsonants.flatMap((c) => blendVowels.map((v) => `${c}${v}`));
+
 function makeDifficultyMap(wordPools, maxWordsPerPattern) {
   const map = {};
   Object.entries(wordPools).forEach(([pattern, words]) => {
@@ -245,6 +250,7 @@ function nowIsoDate() {
 
 function labelTestType(type) {
   if (type === "patterns") return "Patrones";
+  if (type === "blends") return "Sílabas trabadas";
   if (type === "pseudo") return "Pseudopalabras";
   if (type === "phonology") return "Conciencia fonológica";
   if (type === "reading") return "Comprensión";
@@ -328,6 +334,14 @@ function buildPatternsDataset(count, selectedPatterns) {
   const repeated = [];
   while (repeated.length < count) {
     repeated.push(...shuffle(pool));
+  }
+  return repeated.slice(0, count);
+}
+
+function buildBlendsDataset(count) {
+  const repeated = [];
+  while (repeated.length < count) {
+    repeated.push(...shuffle(blendSyllables).map((prompt) => ({ prompt, meta: prompt.slice(0, 2) })));
   }
   return repeated.slice(0, count);
 }
@@ -436,6 +450,13 @@ function prepareLabData() {
       items: buildPatternsDataset(requestedCount, selectedPatterns),
       readingText: "",
       selectedPatterns,
+    };
+  } else if (type === "blends") {
+    prepared = {
+      type,
+      level,
+      items: buildBlendsDataset(requestedCount),
+      readingText: "",
     };
   } else if (type === "pseudo") {
     prepared = {
