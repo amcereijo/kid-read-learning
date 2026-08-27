@@ -46,6 +46,7 @@
                 <option value="phonology">Conciencia fonológica</option>
                 <option value="reading">Comprensión lectora</option>
                 <option value="speed">Velocidad lectora (1 minuto)</option>
+                <option value="letterG">Letra G (ga, go, gu, ge, gi, gue, gui, güe, güi)</option>
               </select>
             </label>
 
@@ -154,6 +155,62 @@
                   <label><input type="checkbox" name="pattern" value="ai" /> ai</label>
                   <label><input type="checkbox" name="pattern" value="au" /> au</label>
                   <label><input type="checkbox" name="pattern" value="ui" /> ui</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset id="gPicker" hidden>
+              <legend>Combinaciones de la letra G</legend>
+              <div class="pattern-quick-actions" aria-label="Acciones rápidas de la G">
+                <button type="button" class="btn btn-outline btn-mini" id="selectBasicG">
+                  Seleccionar básicos
+                </button>
+                <button type="button" class="btn btn-outline btn-mini" id="selectAllG">
+                  Seleccionar todos
+                </button>
+                <button type="button" class="btn btn-outline btn-mini" id="clearG">
+                  Limpiar
+                </button>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">G suave (ga, go, gu)</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="gGroup" value="ga" checked /> ga</label>
+                  <label><input type="checkbox" name="gGroup" value="go" checked /> go</label>
+                  <label><input type="checkbox" name="gGroup" value="gu" checked /> gu</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">G fuerte (ge, gi)</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="gGroup" value="ge" /> ge</label>
+                  <label><input type="checkbox" name="gGroup" value="gi" /> gi</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">U muda (gue, gui)</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="gGroup" value="gue" /> gue</label>
+                  <label><input type="checkbox" name="gGroup" value="gui" /> gui</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Diéresis (güe, güi)</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="gGroup" value="gueD" /> güe</label>
+                  <label><input type="checkbox" name="gGroup" value="guiD" /> güi</label>
+                </div>
+              </div>
+
+              <div class="pattern-group">
+                <p class="pattern-title">Combinadas (gl, gr)</p>
+                <div class="pattern-options">
+                  <label><input type="checkbox" name="gGroup" value="gl" /> gl</label>
+                  <label><input type="checkbox" name="gGroup" value="gr" /> gr</label>
                 </div>
               </div>
             </fieldset>

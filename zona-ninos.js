@@ -14,6 +14,10 @@ const startLabSessionBtn = document.getElementById("startLabSession");
 const selectBasicPatternsBtn = document.getElementById("selectBasicPatterns");
 const selectAllPatternsBtn = document.getElementById("selectAllPatterns");
 const clearPatternsBtn = document.getElementById("clearPatterns");
+const gPicker = document.getElementById("gPicker");
+const selectBasicGBtn = document.getElementById("selectBasicG");
+const selectAllGBtn = document.getElementById("selectAllG");
+const clearGBtn = document.getElementById("clearG");
 
 const labPreview = document.getElementById("labPreview");
 const labPreviewNote = document.getElementById("labPreviewNote");
@@ -115,6 +119,28 @@ const pseudoPatternsByLevel = {
 };
 
 const basicPatternSet = new Set(["al", "el", "il", "ol", "ul"]);
+
+const gLetterPools = {
+  ga: ["gato", "gata", "gallo", "gasa", "gana", "goma", "gota", "garra", "ganga", "gas"],
+  go: ["goma", "gota", "gorro", "gol", "gordo", "globo", "gato", "gasa", "gongo", "gota"],
+  gu: ["gato", "gusta", "guante", "guapo", "guinda", "gusano", "guita", "guía", "guardián", "gusanito"],
+  ge: ["gel", "gemelo", "genio", "geranio", "general", "agenda", "agente", "imagen", "legero", "gerente"],
+  gi: ["gigante", "gimnasia", "girasol", "giro", "gitano", "agitar", "ágil", "región", "magia", "regia"],
+  gue: ["paraguas", "amigo", "lengua", "yegua", "maguey", "amiguitos", "lengüita", "sigueme", "halcón", "tragua"],
+  gui: ["guitarra", "guión", "guinda", "siguiente", "amiguito", "seguir", "distinguido", "lingüística", "sanguínea", "sagú"],
+  gueD: ["güero", "pingüino", "güisqui", "vergüenza", "halagüeño", "güelta", "antigüedad", "güeco", "desagüe", "ungüento"],
+  guiD: ["güi", "pingüino", "güisqui", "argüir", "lingüista", "güija", "güiro", "ergüir", "güindilla", "güisquería"],
+  gl: ["globo", "gloria", "iglesia", "regla", "glaciar", "glúteo", "glotonería", "globo", "gloria", "glaseado"],
+  gr: ["gracias", "grande", "grillo", "gris", "gráfico", "grupo", "grano", "grita", "gripe", "grada"],
+};
+
+const basicGSet = new Set(["ga", "go", "gu"]);
+
+const gDifficultyByLevel = {
+  easy: makeDifficultyMap(gLetterPools, 5),
+  medium: makeDifficultyMap(gLetterPools, 7),
+  hard: gLetterPools,
+};
 
 const phonologyPrompts = [
   "Rima: ¿Qué rima con SOL? Opciones: col, pan, mesa.",
@@ -254,6 +280,7 @@ function labelTestType(type) {
   if (type === "pseudo") return "Pseudopalabras";
   if (type === "phonology") return "Conciencia fonológica";
   if (type === "reading") return "Comprensión";
+  if (type === "letterG") return "Letra G";
   return "Velocidad";
 }
 
@@ -346,7 +373,7 @@ function buildBlendsDataset(count) {
   return repeated.slice(0, count);
 }
 
-function buildPseudoDataset(count) {
+function buildPhonologyDataset(count) {
   const level = labDifficulty.value;
   const consonants = pseudoConsonantsByLevel[level] || pseudoConsonants;
   const endings = pseudoPatternsByLevel[level] || pseudoPatterns;
@@ -364,6 +391,38 @@ function buildPseudoDataset(count) {
     if (seen.size > 120) break;
   }
   return words;
+}
+
+function sanitizeSelectedGGroups() {
+  const selected = Array.from(gPicker.querySelectorAll("input[name='gGroup']:checked"), (n) => n.value);
+  return selected.length > 0 ? selected : ["ga", "go", "gu"];
+}
+
+function setGSelection(mode) {
+  const boxes = gPicker.querySelectorAll("input[name='gGroup']");
+  boxes.forEach((box) => {
+    if (mode === "all") {
+      box.checked = true;
+      return;
+    }
+    if (mode === "basic") {
+      box.checked = basicGSet.has(box.value);
+      return;
+    }
+    box.checked = false;
+  });
+}
+
+function buildLetterGDataset(count, selectedGroups) {
+  const level = labDifficulty.value;
+  const source = gDifficultyByLevel[level] || gLetterPools;
+  const bag = selectedGroups.flatMap((group) => (source[group] || []).map((word) => ({ prompt: word, meta: group })));
+  const pool = bag.length > 0 ? bag : [{ prompt: "gato", meta: "ga" }];
+  const repeated = [];
+  while (repeated.length < count) {
+    repeated.push(...shuffle(pool));
+  }
+  return repeated.slice(0, count);
 }
 
 function buildPhonologyDataset(count) {
@@ -402,7 +461,7 @@ function buildSpeedDataset() {
 }
 
 function formatPreviewLabel(type, item) {
-  if (type === "patterns") return `${item.prompt} (${item.meta})`;
+  if (type === "patterns" || type === "letterG") return `${item.prompt} (${item.meta})`;
   return item.prompt;
 }
 
@@ -427,9 +486,11 @@ function renderLabPreview() {
 function applyLabTypeUI() {
   const type = labTestType.value;
   const hidePattern = type !== "patterns";
+  const hideG = type !== "letterG";
   const hideCount = type === "reading" || type === "speed";
 
   patternPicker.hidden = hidePattern;
+  gPicker.hidden = hideG;
   labCountWrap.hidden = hideCount;
   if (hideCount) {
     labItemCount.value = type === "speed" ? "1" : "3";
@@ -464,6 +525,15 @@ function prepareLabData() {
       level,
       items: buildPseudoDataset(requestedCount),
       readingText: "",
+    };
+  } else if (type === "letterG") {
+    const selectedGroups = sanitizeSelectedGGroups();
+    prepared = {
+      type,
+      level,
+      items: buildLetterGDataset(requestedCount, selectedGroups),
+      readingText: "",
+      selectedGroups,
     };
   } else if (type === "phonology") {
     prepared = {
@@ -521,11 +591,25 @@ function updateStars() {
   starRow.textContent = `${"★".repeat(stars)}${"☆".repeat(5 - stars)}`;
 }
 
+function highlightGLetter(text) {
+  const safe = String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+  const regex = /(g[aeiouáéíóúü]?|gü[ei]|gu[ei]|güi)/giu;
+  return safe.replace(regex, '<span class="g-highlight">$1</span>');
+}
+
 function displayCurrentLabItem() {
   if (!labState.active) return;
   const current = labState.active.items[labState.active.index];
   labProgress.textContent = `Ítem ${labState.active.index + 1} de ${labState.active.items.length}`;
-  labStimulus.textContent = current?.prompt || "Fin de sesión";
+  const prompt = current?.prompt || "Fin de sesión";
+  if (labState.active.type === "letterG" && current?.prompt) {
+    labStimulus.innerHTML = highlightGLetter(prompt);
+  } else {
+    labStimulus.textContent = prompt;
+  }
   updateStars();
 }
 
@@ -613,6 +697,7 @@ function startLabSession() {
   setMainControlsEnabled(!isSpeed);
 
   labTimer.textContent = isSpeed ? formatTimer(60) : formatTimer(0);
+  labStimulus.classList.toggle("stimulus-letter-g", labState.active.type === "letterG");
   displayCurrentLabItem();
   setLabStatus(
     "Sesión activa",
@@ -663,6 +748,7 @@ function finishLabSession(summary) {
   );
 
   labStimulus.textContent = "¡Gran trabajo! Prueba completada.";
+  labStimulus.classList.remove("stimulus-letter-g");
   updateStars();
   saveLabToLogBtn.disabled = false;
   exportLabPdfBtn.disabled = false;
@@ -915,6 +1001,24 @@ if (selectAllPatternsBtn) {
 if (clearPatternsBtn) {
   clearPatternsBtn.addEventListener("click", () => {
     setPatternSelection("none");
+  });
+}
+
+if (selectBasicGBtn) {
+  selectBasicGBtn.addEventListener("click", () => {
+    setGSelection("basic");
+  });
+}
+
+if (selectAllGBtn) {
+  selectAllGBtn.addEventListener("click", () => {
+    setGSelection("all");
+  });
+}
+
+if (clearGBtn) {
+  clearGBtn.addEventListener("click", () => {
+    setGSelection("none");
   });
 }
 

@@ -21,7 +21,7 @@ Guía web interactiva para familias y docentes que acompañan el inicio lector:
 - Checklist de señales de alerta.
 - Mini evaluador orientativo.
 - Registro de sesiones con persistencia local (`localStorage`).
-- Pruebas interactivas por tipo (patrones, sílabas trabadas br/tr/pr/gr, pseudopalabras, conciencia fonológica, comprensión y velocidad).
+- Pruebas interactivas por tipo (patrones, sílabas trabadas br/tr/pr/gr, pseudopalabras, conciencia fonológica, comprensión, velocidad y letra G con todas sus combinaciones).
 - Selección de nivel (`fácil`, `medio`, `avanzado`).
 - Selección de patrones silábicos por categorías con acciones rápidas:
   - Seleccionar básicos
