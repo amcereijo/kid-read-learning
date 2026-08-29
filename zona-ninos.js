@@ -518,6 +518,22 @@ function applyLabTypeUI() {
   if (hideCount) {
     labItemCount.value = type === "speed" ? "1" : "3";
   }
+
+  patternPicker.querySelectorAll(".pattern-group[data-apply]").forEach((group) => {
+    const applies = (group.dataset.apply || "").split(",").map((s) => s.trim());
+    group.hidden = !applies.includes(type);
+  });
+
+  if (type === "blends") {
+    const anyBlendChecked = Array.from(patternPicker.querySelectorAll("input[name='pattern']:checked"))
+      .some((n) => blendConsonantSet.has(n.value));
+    if (!anyBlendChecked) {
+      patternPicker.querySelectorAll("input[name='pattern']").forEach((box) => {
+        box.checked = blendConsonantSet.has(box.value);
+      });
+    }
+  }
+
   updateBlendSequenceVisibility();
 }
 
