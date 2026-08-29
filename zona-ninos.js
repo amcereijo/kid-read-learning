@@ -351,6 +351,17 @@ function setPatternSelection(mode) {
 
     box.checked = false;
   });
+  updateBlendSequenceVisibility();
+}
+
+const blendConsonantSet = new Set(["br", "tr", "pr", "pl", "cl", "gr"]);
+
+function updateBlendSequenceVisibility() {
+  const wrap = document.getElementById("blendSequenceWrap");
+  if (!wrap) return;
+  const anyBlend = Array.from(patternPicker.querySelectorAll("input[name='pattern']:checked"))
+    .some((n) => blendConsonantSet.has(n.value));
+  wrap.hidden = !anyBlend;
 }
 
 function buildPatternsDataset(count, selectedPatterns) {
@@ -366,6 +377,18 @@ function buildPatternsDataset(count, selectedPatterns) {
 }
 
 function buildBlendsDataset(count) {
+  const sequenceMode = document.getElementById("blendSequenceMode")?.checked;
+  if (sequenceMode) {
+    const requested = Array.from(patternPicker.querySelectorAll("input[name='pattern']:checked"))
+      .map((n) => n.value)
+      .filter((v) => blendConsonantSet.has(v));
+    const ordered = requested.length > 0 ? requested : blendConsonants;
+    const items = ordered.flatMap((c) =>
+      ["a", "e", "i", "o", "u"].map((v) => ({ prompt: `${c}${v}`, meta: c }))
+    );
+    return items;
+  }
+
   const repeated = [];
   while (repeated.length < count) {
     repeated.push(...shuffle(blendSyllables).map((prompt) => ({ prompt, meta: prompt.slice(0, 2) })));
@@ -495,6 +518,7 @@ function applyLabTypeUI() {
   if (hideCount) {
     labItemCount.value = type === "speed" ? "1" : "3";
   }
+  updateBlendSequenceVisibility();
 }
 
 function prepareLabData() {
@@ -1021,6 +1045,8 @@ if (clearGBtn) {
     setGSelection("none");
   });
 }
+
+patternPicker.addEventListener("change", updateBlendSequenceVisibility);
 
 window.addEventListener("beforeunload", clearLabTimer);
 

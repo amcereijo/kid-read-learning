@@ -381,6 +381,20 @@ legend {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+.sequence-toggle {
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 700;
+  color: #2a4f87;
+  background: #eef5ff;
+  border: 1px solid #c8dafd;
+  border-radius: 999px;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
+
 @media (max-width: 980px) {
   .layout {
     grid-template-columns: 1fr;
